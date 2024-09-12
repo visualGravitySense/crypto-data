@@ -10,7 +10,7 @@ function App() {
     <Container>
       <Navigation />
       <GlobalData />
-      {/* <ListCoins /> */}
+      <ListCoins />
       <CoinPage />
     </Container>
   );
