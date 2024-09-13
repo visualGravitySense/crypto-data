@@ -19,22 +19,21 @@ function Converter() {
     const handleClick = () => {
 
         setValues ({
-            from: !leftToRight ? values.to : values.from,
-            to: !leftToRight ? values.from : values.to,
+            from: values.to,
+            to: values.from,
         });
         
         setLeftToRight(!leftToRight);
     };
 
-    // const from = leftToRight ? values.to : values.from;
-    // const to =
+    
     return (
         <Row className="g-2">
       <Col md>
         <InputGroup className="mb-3">
             <FloatingLabel controlId="floatingInputGrid" label="from">
                 <Form.Control type="email" placeholder="name@example.com" 
-                value={leftToRight ? values.from : values.to}
+                value={values.from}
                 defaultValue = {values.to}
                 />
                 </FloatingLabel>
@@ -61,7 +60,7 @@ function Converter() {
       <InputGroup className="mb-3">
             <FloatingLabel controlId="toInput" label="To">
                 <Form.Control type="text" placeholder="name@example.com" 
-                value={leftToRight ? values.to : values.from}
+                value={values.to}
                 defaultValue = {values.from}
                 />
                 </FloatingLabel>
