@@ -1,0 +1,13 @@
+/* SearchResults.css */
+.symbol-col {
+    width: 10px; /* Маленькая ширина для символа */
+  }
+  
+  .title-col {
+    width: 300px; /* Большая ширина для названия */
+  }
+  
+  .rank-col {
+    width: 10px; /* Маленькая ширина для ранга */
+  }
+  

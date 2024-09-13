@@ -3,16 +3,18 @@ import Container from "react-bootstrap/Container";
 import Navigation from "./Navigation";
 import ListCoins from "./ListCoins";
 import CoinPage from "./CoinPage";
+import SearchResults from "./SearchResults";
 import GlobalData from "./GlobalData";
 
 function App() {
   return (
-    <Container>
+      <Container>
       <Navigation />
       <GlobalData />
       <ListCoins />
       <CoinPage />
-    </Container>
+      <SearchResults/> 
+    </Container>        
   );
 }
 
