@@ -39,12 +39,44 @@ function Converter() {
         setLeftToRight(!leftToRight);
     };
 
-    const handleSelectChange = (e, type) => {
-        const { value } = e.target;
-        setValues(prevState => ({
-            ...prevState,
-            [type]: value,
-        }));
+    // const handleSelectChange = (e, type) => {
+    //     const { value } = e.target;
+    //     setValues(prevState => ({
+    //         ...prevState,
+    //         [type]: value,
+    //     }));
+    // };
+
+    const handleOnChange = (event) => {
+        console.log(event);
+        const field = event.target.name;
+        const value = event.target.value;
+        console.log(value);
+        
+        setValues ({
+            ...values,
+            [field]: {
+                ...values[field],
+                amount: value,
+            },
+        });
+        
+    };
+
+    const handleOnSelect = (event) => {
+        // console.log(event);
+        const field = event.target.name;
+        const value = event.target.value;
+        // console.log(value);
+        
+        setValues ({
+            ...values,
+            [field]: {
+                ...values[field],
+                coin: value,
+            },
+        });
+        
     };
 
     
@@ -54,9 +86,11 @@ function Converter() {
             <InputGroup className="mb-3">
                 <FloatingLabel controlId="floatingInputGrid" label="From">
                     <Form.Control 
+                        name="from"
                         type="text"
                         value={values.from.amount}
-                        defaultValue={values.to.amount}
+                        // defaultValue={values.to.amount}
+                        onChange={handleOnChange}
                         // onChange={e =>
                         //     setValues(prevState => ({
                         //         ...prevState,
@@ -71,7 +105,9 @@ function Converter() {
                     label="Coin">
                     <Form.Select 
                         value={values.from.coin}
-                        onChange={e => handleSelectChange(e, 'fromCoin')}
+                        name="from"
+                        // onChange={e => handleSelectChange(e, 'fromCoin')}
+                        onChange={handleOnSelect}
                         >
                         <option value="1">Bitcoin</option>
                         <option value="2">Ethereum</option>
@@ -93,9 +129,11 @@ function Converter() {
             <InputGroup className="mb-3">
                 <FloatingLabel controlId="toInput" label="To">
                     <Form.Control 
-                        type="number"  
+                        name="to"
+                        type="text"  
                         value={values.to.amount}
-                        defaultValue={values.from.amount}
+                        // defaultValue={values.from.amount}
+                        onChange={handleOnChange}
                         // onChange={e =>
                         //     setValues(prevState => ({
                         //         ...prevState,
@@ -105,12 +143,15 @@ function Converter() {
                     />
                 </FloatingLabel>
                 <FloatingLabel
-                    controlId="floatingSelectGrid"
+                    controlId="to"
                     label="Coin"
                     >
                     <Form.Select 
                         value={values.to.coin}
-                        onChange={e => handleSelectChange(e, 'toCoin')}
+                        name="to"
+                        // onChange={e => handleSelectChange(e, 'toCoin')}
+                        onChange={handleOnSelect}
+
                     >
                         <option value="1">Bitcoin</option>
                         <option value="2">Ethereum</option>
