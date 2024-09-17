@@ -9,10 +9,18 @@ import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 import './Converter.css';
 
 const initialState = {
-    fromValue: 100,
-    toValue: 500,
-    fromCoin: '1',
-    toCoin: '2',
+    from: {
+        amount: 100,
+        coin: 2,
+    },
+    to: {
+        amount: 500,
+        coin: 1,
+    },
+    // fromValue: 100,
+    // toValue: 500,
+    // fromCoin: '1',
+    // toCoin: '2',
 };
 
 function Converter() {
@@ -21,10 +29,12 @@ function Converter() {
 
     const handleClick = () => {
         setValues ({
-            fromValue: values.toValue,
-            toValue: values.fromValue,
-            fromCoin: values.toCoin,
-            toCoin: values.fromCoin,
+            from: values.to,
+            to: values.from,
+            // fromValue: values.toValue,
+            // toValue: values.fromValue,
+            // fromCoin: values.toCoin,
+            // toCoin: values.fromCoin,
         });      
         setLeftToRight(!leftToRight);
     };
@@ -44,14 +54,15 @@ function Converter() {
             <InputGroup className="mb-3">
                 <FloatingLabel controlId="floatingInputGrid" label="From">
                     <Form.Control 
-                        type="number"
-                        value={values.fromValue}
-                        onChange={e =>
-                            setValues(prevState => ({
-                                ...prevState,
-                                fromValue: e.target.value,
-                            }))
-                        }
+                        type="text"
+                        value={values.from.amount}
+                        defaultValue={values.to.amount}
+                        // onChange={e =>
+                        //     setValues(prevState => ({
+                        //         ...prevState,
+                        //         fromValue: e.target.value,
+                        //     }))
+                        // }
                     />
                     </FloatingLabel>
                     
@@ -59,7 +70,7 @@ function Converter() {
                     controlId="floatingSelectGrid"
                     label="Coin">
                     <Form.Select 
-                        value={values.fromCoin}
+                        value={values.from.coin}
                         onChange={e => handleSelectChange(e, 'fromCoin')}
                         >
                         <option value="1">Bitcoin</option>
@@ -83,13 +94,14 @@ function Converter() {
                 <FloatingLabel controlId="toInput" label="To">
                     <Form.Control 
                         type="number"  
-                        value={values.toValue}
-                        onChange={e =>
-                            setValues(prevState => ({
-                                ...prevState,
-                                toValue: e.target.value,
-                            }))
-                        }
+                        value={values.to.amount}
+                        defaultValue={values.from.amount}
+                        // onChange={e =>
+                        //     setValues(prevState => ({
+                        //         ...prevState,
+                        //         toValue: e.target.value,
+                        //     }))
+                        // }
                     />
                 </FloatingLabel>
                 <FloatingLabel
@@ -97,7 +109,7 @@ function Converter() {
                     label="Coin"
                     >
                     <Form.Select 
-                        value={values.toCoin}
+                        value={values.to.coin}
                         onChange={e => handleSelectChange(e, 'toCoin')}
                     >
                         <option value="1">Bitcoin</option>
