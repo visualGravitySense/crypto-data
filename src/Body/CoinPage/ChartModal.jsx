@@ -1,44 +1,34 @@
 import React, { useState } from 'react';
-import { Button, Modal } from 'react-bootstrap';
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+import { Modal } from 'react-bootstrap';
+import CoinChart from './CoinChart'; // Импортируем график
+import styled from 'styled-components';
 
-// Данные для графика
-const data = [
-  { name: 'Page A', uv: 4000, pv: 2400, amt: 2400 },
-  { name: 'Page B', uv: 3000, pv: 1398, amt: 2210 },
-  { name: 'Page C', uv: 2000, pv: 9800, amt: 2290 },
-  { name: 'Page D', uv: 2780, pv: 3908, amt: 2000 },
-  { name: 'Page E', uv: 1890, pv: 4800, amt: 2181 },
-  { name: 'Page F', uv: 2390, pv: 3800, amt: 2500 },
-  { name: 'Page G', uv: 3490, pv: 4300, amt: 2100 },
-];
+// Стили для Anti Design кнопки
+const AntiDesignButton = styled.button`
+  background-color: #000000;   /* Кислотный розовый цвет */
+  color: white;
+  font-size: 0.5rem;
+  padding: 10px 5px;
+  border-radius: 5px;
+  border: 1px solid #0000ff;   /*  синяя рамка */
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  box-shadow: 1px 1px 0 #00ff00; /* Грубая тень зеленого цвета */
+  transition: all 0.3s ease;
 
-// Компонент графика
-function CoinChart() {
-  return (
-    <ResponsiveContainer width="100%" height={400}>
-      <AreaChart
-        width={500}
-        height={400}
-        data={data}
-        margin={{
-          top: 10,
-          right: 30,
-          left: 0,
-          bottom: 0,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" />
-        <YAxis />
-        <Tooltip />
-        <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
-      </AreaChart>
-    </ResponsiveContainer>
-  );
-}
+  &:hover {
+    transform: scale(1.1) rotate(-0.11deg); /* Увеличение размера и вращение при наведении */
+    background-color: #00aa00;  /* Поменяем цвет при наведении на кислотно-зеленый */
+    border-color: #ff69b4;      /* Меняем рамку при наведении */
+  }
 
-// Основной компонент с кнопкой и модальным окном
+  &:active {
+    transform: scale(0.95) rotate(0deg);  /* Анимация при нажатии */
+    transition: all 1s ease;
+  }
+`;
+
 const ChartModal = () => {
   const [show, setShow] = useState(false);
 
@@ -47,9 +37,10 @@ const ChartModal = () => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Увеличить график
-      </Button>
+      {/* Используем нашу Anti Design кнопку */}
+      <AntiDesignButton onClick={handleShow}>
+        Enlarge Chart
+      </AntiDesignButton>
 
       <Modal show={show} onHide={handleClose} size="lg">
         <Modal.Body>
