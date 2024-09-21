@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 import CoinMetrics from "./CoinMetrics";
 import CoinChart from "./CoinChart";
 import ChartPeriods from "./ChartPeriods";
+import Button from 'react-bootstrap/Button'
 
 function CoinPage() {
   return (
@@ -16,6 +17,7 @@ function CoinPage() {
         <Col md={8}>
           <ChartPeriods />
           <CoinChart />
+          <Button variant="primary">Zoom</Button>
           
         </Col>
       </Row>
