@@ -7,7 +7,7 @@ function ListCoins() {
 
   React.useEffect(() => {
     getCoinList().then((data) => {
-      setCoinList(data.slice(0, 100));
+      setCoinList(data.slice(0, 10));
     });
   }, []);
 

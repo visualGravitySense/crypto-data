@@ -22,18 +22,19 @@ function CoinPage() {
         <Col md={4}>
           <CoinMetrics />
         </Col>
-        <Col md={8}>                              
+        <Col md={8}>   
+          <ChartPeriods />
+          <CoinChart />
+          <Button onClick={handleShow} variant="primary">
+            Zoom Chart
+          </Button>
         </Col>
-      </Row>
-
-      <Button onClick={handleShow} variant="primary">
-        Zoom
-      </Button>
-
+      </Row>            
+      
       <ChildModal show={childModalShow} handleClose={handleClose}>
         
-        <CoinChart />
         <ChartPeriods />
+        <CoinChart />
         
       </ChildModal>
     </>
