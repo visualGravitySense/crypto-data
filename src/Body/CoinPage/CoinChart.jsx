@@ -25,16 +25,40 @@ function CoinChart() {
           bottom: 1,
         }}
       >
-        {/* Сетка с необычными цветами */}
-        <CartesianGrid stroke="#ff69b4" strokeDasharray="10 10" /> 
+        {/* Сетка с необычным цветом и штриховкой */}
+        <CartesianGrid stroke="#ff69b4" strokeDasharray="15 15" /> 
         
-        {/* Оси с крупными шрифтами и яркими цветами */}
-        <XAxis dataKey="name" stroke="#000000" tick={{ fontSize: 20, fontWeight: 'bold' }} />
-        <YAxis stroke="#000000" tick={{ fontSize: 20, fontWeight: 'bold' }} />
+        {/* Оси с крупными шрифтами, яркими цветами и необычным стилем */}
+        <XAxis 
+          dataKey="name" 
+          stroke="#ff4500" 
+          tick={{ fontSize: 18, fontWeight: '700', fill: '#000', fontFamily: 'Courier New' }} 
+        />
+        <YAxis 
+          stroke="#ff4500" 
+          tick={{ fontSize: 18, fontWeight: '700', fill: '#000', fontFamily: 'Courier New' }} 
+        />
         
-        {/* Настройки области графика */}
-        <Tooltip cursor={{ strokeDasharray: '5 5' }} />
-        <Area type="step" dataKey="uv" stroke="#00ffff" fill="#000000" strokeWidth={5} />
+        {/* Настройки области графика с яркими цветами */}
+        <Tooltip 
+          cursor={{ stroke: '#00ffff', strokeWidth: 3, strokeDasharray: '5 5' }} 
+          contentStyle={{ backgroundColor: '#000', color: '#fff', border: '2px solid #ff69b4' }}
+        />
+        <Area 
+          type="monotone" 
+          dataKey="uv" 
+          stroke="#ff1493" 
+          fillOpacity={0.8} 
+          fill="url(#colorUv)" 
+          strokeWidth={4}
+          dot={{ fill: '#ff1493', stroke: '#000', strokeWidth: 2, r: 6 }} // Крупные точки на графике
+        />
+        <defs>
+          <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="5%" stopColor="#ff1493" stopOpacity={0.8} />
+            <stop offset="95%" stopColor="#000" stopOpacity={0.2} />
+          </linearGradient>
+        </defs>
       </AreaChart>
     </ResponsiveContainer>
   );
