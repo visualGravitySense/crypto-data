@@ -8,6 +8,8 @@ import ChartPeriods from "./ChartPeriods";
 import Button from 'react-bootstrap/Button'
 import ChildModal from './ChildModal'
 import BitcoinData from './BitcoinData'
+import ChartModal from '../CoinPage/ChartModal';
+
 
 function CoinPage() {
   const [childModalShow, setChildModalShow] = React.useState(false);
@@ -27,9 +29,11 @@ function CoinPage() {
         <Col md={8}>   
           <ChartPeriods />
           <CoinChart />
-          <Button onClick={handleShow} variant="primary">
+          <ChartModal />
+          
+          {/* <Button onClick={handleShow} variant="primary">
             Zoom Chart
-          </Button>
+          </Button> */}
         </Col>
       </Row>            
       
