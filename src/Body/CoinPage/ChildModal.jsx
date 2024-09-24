@@ -7,9 +7,9 @@ import styled from 'styled-components';
 const AntiDesignButton = styled.button`
   background-color: #000000;   /* Кислотный розовый цвет */
   color: white;
-  font-size: 0.5rem;
-  padding: 10px 5px;
-  border-radius: 5px;
+  font-size: 16px;
+  padding: 15px;
+  // border-radius: 5px;
   border: 1px solid #0000ff;   /*  синяя рамка */
   cursor: pointer;
   text-transform: uppercase;

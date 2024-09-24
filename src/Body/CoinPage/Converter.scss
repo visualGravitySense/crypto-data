@@ -17,6 +17,7 @@ $hover-bg-color: #333;
   background-color: $secondary-color;
   border: 3px solid $primary-color;
   padding: 20px;
+  margin: 24px;
   @include box-shadow-effect($shadow-size, $primary-color);
 
   input, select {
