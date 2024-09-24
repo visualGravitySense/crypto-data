@@ -7,9 +7,10 @@ import styled from 'styled-components';
 const AntiDesignButton = styled.button`
   background-color: #000000;   /* Кислотный розовый цвет */
   color: white;
-  font-size: 0.5rem;
-  padding: 10px 5px;
-  border-radius: 5px;
+  font-size: 16px;
+  padding: 15px;
+  margin: 16px;
+  border-radius: 1px;
   border: 1px solid #0000ff;   /*  синяя рамка */
   cursor: pointer;
   text-transform: uppercase;
@@ -19,7 +20,7 @@ const AntiDesignButton = styled.button`
 
   &:hover {
     transform: scale(1.1) rotate(-0.11deg); /* Увеличение размера и вращение при наведении */
-    background-color: #00aa00;  /* Поменяем цвет при наведении на кислотно-зеленый */
+    background-color: #0772ee;  /* Поменяем цвет при наведении на кислотно-зеленый */
     border-color: #ff69b4;      /* Меняем рамку при наведении */
   }
 
@@ -42,7 +43,7 @@ const ChartModal = () => {
         Enlarge Chart
       </AntiDesignButton>
 
-      <Modal show={show} onHide={handleClose} size="lg">
+      <Modal show={show} onHide={handleClose} size="xl">
         <Modal.Body>
           <CoinChart />
         </Modal.Body>
