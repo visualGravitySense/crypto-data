@@ -1,8 +1,11 @@
 // API.js
 const apiUrl = "https://api.coinpaprika.com/v1";
 
-export const getCoinList = async () => {
-  const response = await fetch(`${apiUrl}/coins`);
+export const getCoinList = async (currency) => {
+  const params = new URLSearchParams({
+    quotes: currency,
+  });
+  const response = await fetch(`${apiUrl}/tickers?${params}`);
 
   return await response.json();
 };
