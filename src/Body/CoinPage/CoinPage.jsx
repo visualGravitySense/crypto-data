@@ -1,4 +1,5 @@
-import React from "react";
+// import React from "react";
+import React, { useState, useEffect } from 'react';
 import CoinPriceSection from "./CoinPriceSection";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -9,13 +10,21 @@ import ChartPeriods from "./ChartPeriods";
 import ChildModal from './ChildModal'
 import ChartModal from '../CoinPage/ChartModal';
 import ListCoins from '../ListCoins';
+import { getCoinById } from "../../services/api";
 
 
 function CoinPage() {
   const [childModalShow, setChildModalShow] = React.useState(false);
 
+React.useState(false);
+  const [coinData, setCoinData] = React.useState({});
+
   const handleShow = () => setChildModalShow(true);
   const handleClose = () => setChildModalShow(false);
+
+  React.useEffect(() => {
+    getCoinById("btc-bitcoin").then(setCoinData);
+  }, []);
   
 // Test
   return (
@@ -23,7 +32,7 @@ function CoinPage() {
      
       <Row>
         <Col md={4}>
-          <CoinMetrics />
+          <CoinMetrics {...coinData} />
           
         </Col>
         <Col md={8}>  
