@@ -8,6 +8,7 @@ import ChartPeriods from "./ChartPeriods";
 // import Button from 'react-bootstrap/Button'
 import ChildModal from './ChildModal'
 import ChartModal from '../CoinPage/ChartModal';
+import ListCoins from '../ListCoins';
 
 
 function CoinPage() {
@@ -19,16 +20,23 @@ function CoinPage() {
 // Test
   return (
     <>
-      <CoinPriceSection />
+     
       <Row>
         <Col md={4}>
           <CoinMetrics />
           
         </Col>
         <Col md={8}>  
-          <ChartModal />
-          {/* <ChartPeriods /> */}
-          <CoinChart />
+          {/* <ListCoins /> */}
+          
+            
+            <CoinPriceSection />
+
+            <ChartModal />
+            {/* <ChartPeriods /> */}
+            <CoinChart />
+        
+          
           
           {/* <Button onClick={handleShow} variant="primary">
             Zoom Chart

@@ -5,13 +5,14 @@ import SearchResult from './SearchResult';
 import CoinPage from './CoinPage/CoinPage';
 import Converter from './CoinPage/Converter';
 
-function Body() {
+
+function Body(props) {
     return (
         <>
             <GlobalData />
             <SearchResult />
             <Converter />
-            <ListCoins />
+            <ListCoins {...props} />
             {/* <ChartModal /> */}
             <CoinPage />
             
