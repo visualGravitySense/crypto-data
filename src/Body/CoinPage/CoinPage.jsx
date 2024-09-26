@@ -13,7 +13,7 @@ import ListCoins from '../ListCoins';
 import { getCoinById } from "../../services/api";
 
 
-function CoinPage() {
+function CoinPage({ selectedCurrency }) {
   const [childModalShow, setChildModalShow] = React.useState(false);
 
 React.useState(false);
@@ -23,8 +23,8 @@ React.useState(false);
   const handleClose = () => setChildModalShow(false);
 
   React.useEffect(() => {
-    getCoinById("btc-bitcoin").then(setCoinData);
-  }, []);
+    getCoinById("btc-bitcoin", selectedCurrency.name).then(setCoinData);
+  }, [selectedCurrency]);
   
 // Test
   return (
@@ -32,7 +32,7 @@ React.useState(false);
      
       <Row>
         <Col md={4}>
-          <CoinMetrics {...coinData} />
+         <CoinMetrics {...coinData} currency={selectedCurrency} />
           
         </Col>
         <Col md={8}>  
