@@ -18,13 +18,19 @@ export const getGlobalData = async () => {
 
 
 // Bitcoin data
-export const getBitcoin = async () => {
-  const response = await fetch(`${apiUrl}/coins/btc-bitcoin`);
+// export const getBitcoin = async () => {
+//   const response = await fetch(`${apiUrl}/coins/btc-bitcoin`);
   
   
-  if (!response.ok) {
-    throw new Error('Failed to fetch Bitcoin data');
-  }
+//   if (!response.ok) {
+//     throw new Error('Failed to fetch Bitcoin data');
+//   }
   
+//   return await response.json();
+// };
+
+export const getCoinById = async (id) => {
+  const response = await fetch(`${apiUrl}/coins/${id}`);
+
   return await response.json();
 };
