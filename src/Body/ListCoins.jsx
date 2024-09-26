@@ -43,16 +43,16 @@ function ListCoins({ selectedCurrency }) {
             <td>{coin.rank}</td>
             <td>{coin.name}</td>
             <td>
-              <PriceNumber value={coin.quotes[selectedCurrency]?.price} />
+              <PriceNumber value={coin.quotes[selectedCurrency.name]?.price} symbol={selectedCurrency.symbol} />
             </td>
-            <td>{coin.quotes[selectedCurrency]?.percent_change_1h}</td>
-            <td>{coin.quotes[selectedCurrency]?.percent_change_24h}</td>
-            <td>{coin.quotes[selectedCurrency]?.percent_change_7d}</td>
+            <td>{coin.quotes[selectedCurrency.name]?.percent_change_1h}</td>
+            <td>{coin.quotes[selectedCurrency.name]?.percent_change_24h}</td>
+            <td>{coin.quotes[selectedCurrency.name]?.percent_change_7d}</td>
             <td>
-              <PriceNumber value={coin.quotes[selectedCurrency]?.volume_24h} />
+              <PriceNumber value={coin.quotes[selectedCurrency.name]?.volume_24h} symbol={selectedCurrency.symbol} />
             </td>
             <td>
-              <PriceNumber value={coin.quotes[selectedCurrency]?.market_cap} />
+              <PriceNumber value={coin.quotes[selectedCurrency.name]?.market_cap} symbol={selectedCurrency.symbol} />
             </td>
             <td>{coin.max_supply}</td>
           </tr>

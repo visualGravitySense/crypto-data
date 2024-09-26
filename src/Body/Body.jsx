@@ -14,7 +14,7 @@ function Body(props) {
             <Converter />
             <ListCoins {...props} />
             {/* <ChartModal /> */}
-            <CoinPage />
+            <CoinPage  />
             
             
         </>

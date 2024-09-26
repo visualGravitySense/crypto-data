@@ -16,6 +16,10 @@ function CoinPage() {
 
   const handleShow = () => setChildModalShow(true);
   const handleClose = () => setChildModalShow(false);
+
+  React.useEffect(() => {
+    getCoinById("btc-bitcoin", selectedCurrency).then(setCoinData);
+  }, [selectedCurrency])
   
 // Test
   return (
@@ -23,7 +27,7 @@ function CoinPage() {
      
       <Row>
         <Col md={4}>
-          <CoinMetrics />
+          <CoinMetrics {...CoinData} currency={selectedCurrency} />
           
         </Col>
         <Col md={8}>  
