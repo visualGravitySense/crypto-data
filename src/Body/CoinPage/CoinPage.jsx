@@ -10,11 +10,14 @@ import ChartPeriods from "./ChartPeriods";
 import ChildModal from './ChildModal'
 import ChartModal from '../CoinPage/ChartModal';
 import ListCoins from '../ListCoins';
-import { getCoinById } from "../../services/api";
+import { getCoinById, getHistoricalData } from "../../services/api";
+import { periods } from './constant'
 
 
 function CoinPage({ selectedCurrency }) {
   const [childModalShow, setChildModalShow] = React.useState(false);
+  const [historiacalData, setHistoricalData] = React.useState([]);
+  const [selectedPeriod, setSelectedPeriod] = React.useState(periods[0]);
 
 React.useState(false);
   const [coinData, setCoinData] = React.useState({});
@@ -25,6 +28,19 @@ React.useState(false);
   React.useEffect(() => {
     getCoinById("btc-bitcoin", selectedCurrency.name).then(setCoinData);
   }, [selectedCurrency]);
+
+  React.useEffect(() => {
+    // getCoinById("btc-bitcoin", selectedCurrency.name).then(setCoinData);
+    getHistoricalData({
+      id: 'btc-bitcoin',
+      currency: selectedCurrency.name,
+      start: selectedPeriod.start,
+      interval: selectedPeriod.interval,
+    }).then(setHistoricalData);
+  }, [selectedCurrency, selectedPeriod]);
+
+  console.log(historiacalData);
+  
   
 // Test
   return (
@@ -55,7 +71,7 @@ React.useState(false);
       
       <ChildModal show={childModalShow} handleClose={handleClose}>
         
-        <ChartPeriods />
+        <ChartPeriods selectedPeriod={selectedPeriod} setSelectedPeriod={setSelectedPeriod}  />
         <CoinChart />
         
       </ChildModal>
