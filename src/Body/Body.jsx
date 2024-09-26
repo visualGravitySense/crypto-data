@@ -6,15 +6,15 @@ import CoinPage from './CoinPage/CoinPage';
 import Converter from './CoinPage/Converter';
 
 
-function Body(props) {
+function Body({ selectedCurrency }) {
     return (
         <>
             <GlobalData />
             <SearchResult />
             <Converter />
-            <ListCoins {...props} />
+            <ListCoins selectedCurrency={selectedCurrency} />
             {/* <ChartModal /> */}
-            <CoinPage />
+            <CoinPage selectedCurrency={selectedCurrency}/>
             
             
         </>

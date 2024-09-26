@@ -8,7 +8,8 @@ import { currencies } from "./constants";
 
 
 function App() {
-  const [selectedCurrency, setSelectedCurrency] = React.useState(currencies[0]);
+  // const [selectedCurrency, setSelectedCurrency] = React.useState(currencies[0]);
+  const [selectedCurrency, setSelectedCurrency] = React.useState('EUR'); 
   return (
     <Container>
       <Header

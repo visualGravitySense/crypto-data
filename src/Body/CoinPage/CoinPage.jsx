@@ -9,13 +9,18 @@ import ChartPeriods from "./ChartPeriods";
 import ChildModal from './ChildModal'
 import ChartModal from '../CoinPage/ChartModal';
 import ListCoins from '../ListCoins';
+import { getBitcoin } from "../../services/api";
 
 
-function CoinPage() {
+function CoinPage({ selectedCurrency }) {
   const [childModalShow, setChildModalShow] = React.useState(false);
-
+  const [coinData, setCoinData] = React.useState(null);
   const handleShow = () => setChildModalShow(true);
   const handleClose = () => setChildModalShow(false);
+
+  React.useEffect(() => {
+    getBitcoin('btc-bitcoin', selectedCurrency).then(setCoinData);
+    }, [selectedCurrency]);
   
 // Test
   return (
@@ -23,14 +28,14 @@ function CoinPage() {
      
       <Row>
         <Col md={4}>
-          <CoinMetrics />
+          <CoinMetrics coinData={coinData} selectedCurrency={selectedCurrency} />
           
         </Col>
         <Col md={8}>  
           {/* <ListCoins /> */}
           
             
-            <CoinPriceSection />
+            <CoinPriceSection selectedCurrency={selectedCurrency} />
 
             <ChartModal />
             {/* <ChartPeriods /> */}

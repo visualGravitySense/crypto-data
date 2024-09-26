@@ -18,8 +18,11 @@ export const getGlobalData = async () => {
 
 
 // Bitcoin data
-export const getBitcoin = async () => {
-  const response = await fetch(`${apiUrl}/coins/btc-bitcoin`);
+export const getBitcoin = async (id, currency) => {
+  const params = new URLSearchParams({
+      quotes: currency,
+  });
+  const response = await fetch(`${apiUrl}/tickers/${id}?${params}`);
   
   
   if (!response.ok) {

@@ -3,10 +3,14 @@ import Table from "react-bootstrap/Table";
 import { getCoinList } from "../services/api";
 import Alert from "react-bootstrap/Alert";
 import PriceNumber from "./PriceNumber";
+import { currencies } from '../constants';
 
 function ListCoins({ selectedCurrency }) {
   const [coinList, setCoinList] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
+  const symbol = Object.entries(currencies).find(
+    ([sym, currency]) => currency === selectedCurrency
+  )?.[0];
 
   React.useEffect(() => {
     setIsLoading(true);
@@ -43,16 +47,16 @@ function ListCoins({ selectedCurrency }) {
             <td>{coin.rank}</td>
             <td>{coin.name}</td>
             <td>
-              <PriceNumber value={coin.quotes[selectedCurrency]?.price} />
+              <PriceNumber value={coin.quotes[selectedCurrency]?.price} symbol={symbol} fixedDecimalScale={true} />
             </td>
-            <td>{coin.quotes[selectedCurrency]?.percent_change_1h}</td>
-            <td>{coin.quotes[selectedCurrency]?.percent_change_24h}</td>
-            <td>{coin.quotes[selectedCurrency]?.percent_change_7d}</td>
+            <td><PriceNumber value={coin.quotes[selectedCurrency]?.percent_change_1h} suffix=" %" fixedDecimalScale={true} /></td>
+            <td><PriceNumber value={coin.quotes[selectedCurrency]?.percent_change_24h} suffix=" %" fixedDecimalScale={true} /></td>
+            <td><PriceNumber value={coin.quotes[selectedCurrency]?.percent_change_7d} suffix=" %" fixedDecimalScale={true} /></td>
             <td>
-              <PriceNumber value={coin.quotes[selectedCurrency]?.volume_24h} />
+              <PriceNumber value={coin.quotes[selectedCurrency]?.volume_24h} symbol={symbol} fixedDecimalScale={true} />
             </td>
             <td>
-              <PriceNumber value={coin.quotes[selectedCurrency]?.market_cap} />
+              <PriceNumber value={coin.quotes[selectedCurrency]?.market_cap} symbol={symbol} fixedDecimalScale={true} />
             </td>
             <td>{coin.max_supply}</td>
           </tr>
