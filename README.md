@@ -142,5 +142,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 1. **Screenshots**: Add project screenshots in the relevant section to visually represent your application.
 2. **API Key**: If your API requires a key, provide instructions for configuring it. In this case, CoinPaprika does not require one, but if you add APIs requiring keys, explain the setup.
 3. **Future Plans**: Regularly update the "Future Plans" section to reflect ongoing and planned improvements.
-
-By following this structure, your README will remain professional, clear, and useful for both users and developers!
