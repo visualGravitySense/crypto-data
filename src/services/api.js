@@ -36,3 +36,12 @@ export const getHistoricalData = async ({ id, currency, start, interval }) => {
 
   return await response.json();
 };
+
+export const getSearch = async (q) => {
+  const params = new URLSearchParams({
+    q,
+  });
+  const response = await fetch(`${apiUrl}/search/?${params}`);
+
+  return await response.json();
+}
