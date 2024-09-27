@@ -13,12 +13,16 @@ import ListCoins from '../ListCoins';
 import { getCoinById, getHistoricalData } from "../../services/api";
 import { periods } from './constant';
 import moment from 'moment';
+import { useParams } from 'react-router-dom';
+import Converter from './Converter';
 
 
 function CoinPage({ selectedCurrency }) {
   const [childModalShow, setChildModalShow] = React.useState(false);
   const [historicalData, setHistoricalData] = React.useState([]);
   const [selectedPeriod, setSelectedPeriod] = React.useState(periods[0]);
+
+  const { coinId } = useParams();
 
 React.useState(false);
   const [coinData, setCoinData] = React.useState({});
@@ -27,13 +31,13 @@ React.useState(false);
   const handleClose = () => setChildModalShow(false);
 
   React.useEffect(() => {
-    getCoinById("btc-bitcoin", selectedCurrency.name).then(setCoinData);
-  }, [selectedCurrency]);
+    getCoinById(coinId, selectedCurrency.name).then(setCoinData);
+  }, [selectedCurrency, coinId]);
 
   React.useEffect(() => {
     // getCoinById("btc-bitcoin", selectedCurrency.name).then(setCoinData);
     getHistoricalData({
-      id: 'btc-bitcoin',
+      id: coinId,
       currency: selectedCurrency.name,
       start: selectedPeriod.start(),
       interval: selectedPeriod.interval,
@@ -47,7 +51,7 @@ React.useState(false);
       )
     )
   );
-  }, [selectedCurrency, selectedPeriod]);
+  }, [selectedCurrency, selectedPeriod, coinId]);
 
   // console.log(historiacalData);
   
@@ -59,7 +63,7 @@ React.useState(false);
       <Row>
         <Col md={4}>
          <CoinMetrics {...coinData} currency={selectedCurrency} />
-          
+         <Converter />
         </Col>
         <Col md={8}>  
           {/* <ListCoins /> */}
