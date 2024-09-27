@@ -9,27 +9,27 @@ export const periods = [
 
     {
         label: "7d",
-        start: null,
+        start: moment().subtract(7, 'days').add(10, 'second').utc().unix(),
         interval: "1d"
     },
     {
         label: "30d",
-        start: null,
+        start: moment().subtract(30, 'days').add(10, 'second').utc().unix(),
         interval: "1d"
     },
     {
         label: "1q",
-        start: null,
+        start: moment().subtract(3, 'months').add(10, 'second').utc().unix(),
         interval: "7d"
     },
     {
         label: "1y",
-        start: null,
+        start: moment().subtract(1, 'year').add(10, 'second').utc().unix(),
         interval: "7d"
     },
     {
         label: "YTD",
-        start: null,
+        start: moment().startOf('year').add(10, 'second').utc().unix(),
         interval: "7d"
     },
 ]
