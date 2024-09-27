@@ -1,6 +1,4 @@
-Here’s a detailed README for the **Cryptocurrency Dashboard** project:
-
----
+![Banner](crypto-banner.png)
 
 # 🪙 Cryptocurrency Dashboard
 
