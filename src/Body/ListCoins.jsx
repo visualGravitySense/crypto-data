@@ -33,12 +33,12 @@ function ListCoins({ selectedCurrency }) {
             <th>#</th>
             <th>Name</th>
             <th>Price</th>
-            <th className="d-none d-md-table-cell">1h</th> {/* Скрываем на мобильных */}
-            <th className="d-none d-md-table-cell">24h</th> {/* Скрываем на мобильных */}
-            <th className="d-none d-lg-table-cell">7d</th> {/* Скрываем на малых и средних экранах */}
+            <th className="d-none d-md-table-cell">1h</th>{/* Скрываем на мобильных */}
+            <th className="d-none d-md-table-cell">24h</th>{/* Скрываем на мобильных */}
+            <th className="d-none d-lg-table-cell">7d</th>{/* Скрываем на малых и средних экранах */}
             <th>Volume(24h)</th>
             <th>MarketCap</th>
-            <th className="d-none d-lg-table-cell">Max supply</th> {/* Скрываем на малых экранах */}
+            <th className="d-none d-lg-table-cell">Max supply</th>{/* Скрываем на малых экранах */}
           </tr>
         </thead>
         <tbody>

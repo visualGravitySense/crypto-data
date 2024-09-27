@@ -8,26 +8,25 @@ import { periods } from './constant';
 // ]
 
 function ChartPeriods({ selectedPeriod, setSelectedPeriod }) {
-    // const [selected, setSelected] = React.useState(periods[3]);
 
     const handleClick = (period) => {
-        setSelectedPeriod(period);
+      setSelectedPeriod(period);
     };
 
     return (
-        <ButtonGroup aria-label="Basic example">
-            {periods.map((period) => (
-                <Button 
-                    key={period.label}
-                    variant="secondary"
-                    onClick={() => handleClick(period)}
-                    active={selectedPeriod.label === period.label}
-                >
-                    {period.label}</Button>
-            ))}
-
-        </ButtonGroup>
+        <ButtonGroup>
+      {periods.map((period) => (
+        <Button
+          key={period.label}
+          variant="secondary"
+          onClick={() => handleClick(period)}
+          active={selectedPeriod.label === period.label}
+        >
+          {period.label}
+        </Button>
+      ))}
+    </ButtonGroup>
     );
 }
 
-export default ChartPeriods
+export default ChartPeriods;

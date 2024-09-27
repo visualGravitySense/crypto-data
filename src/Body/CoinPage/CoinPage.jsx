@@ -11,12 +11,13 @@ import ChildModal from './ChildModal'
 import ChartModal from '../CoinPage/ChartModal';
 import ListCoins from '../ListCoins';
 import { getCoinById, getHistoricalData } from "../../services/api";
-import { periods } from './constant'
+import { periods } from './constant';
+import moment from 'moment';
 
 
 function CoinPage({ selectedCurrency }) {
   const [childModalShow, setChildModalShow] = React.useState(false);
-  const [historiacalData, setHistoricalData] = React.useState([]);
+  const [historicalData, setHistoricalData] = React.useState([]);
   const [selectedPeriod, setSelectedPeriod] = React.useState(periods[0]);
 
 React.useState(false);
@@ -34,12 +35,21 @@ React.useState(false);
     getHistoricalData({
       id: 'btc-bitcoin',
       currency: selectedCurrency.name,
-      start: selectedPeriod.start,
+      start: selectedPeriod.start(),
       interval: selectedPeriod.interval,
-    }).then(setHistoricalData);
+    }).then(data => 
+      setHistoricalData(
+        data?.map(({ timestamp, ...rest }) => ({
+          ...rest,
+          timestamp: moment(timestamp).format(selectedPeriod.format),
+        })
+        
+      )
+    )
+  );
   }, [selectedCurrency, selectedPeriod]);
 
-  console.log(historiacalData);
+  // console.log(historiacalData);
   
   
 // Test
@@ -58,8 +68,11 @@ React.useState(false);
             <CoinPriceSection />
 
             <ChartModal />
-            {/* <ChartPeriods /> */}
-            <CoinChart />
+            <ChartPeriods
+                selectedPeriod={selectedPeriod}
+                setSelectedPeriod={setSelectedPeriod}
+              />
+            <CoinChart data={historicalData}/>
         
           
           
@@ -72,7 +85,7 @@ React.useState(false);
       <ChildModal show={childModalShow} handleClose={handleClose}>
         
         <ChartPeriods selectedPeriod={selectedPeriod} setSelectedPeriod={setSelectedPeriod}  />
-        <CoinChart />
+        <CoinChart data={historicalData}/>
         
       </ChildModal>
     </>

@@ -3,9 +3,9 @@ import Table from "react-bootstrap/Table";
 function CoinMetrics({ name, symbol, quotes, currency, total_supply }) {
   return (
     <>
-      <h3><h3>
+      <h3>
         {name} ({symbol}) Metrics
-      </h3></h3>
+      </h3>
       <Table striped bordered hover>
         <tbody>
           <tr>
