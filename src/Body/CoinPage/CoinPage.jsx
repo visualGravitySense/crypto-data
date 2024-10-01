@@ -63,11 +63,12 @@ React.useState(false);
       <Row>
         <Col md={4}>
          <CoinMetrics {...coinData} currency={selectedCurrency} />
-         <Converter />
+         
         </Col>
         <Col md={8}>  
           {/* <ListCoins /> */}
           
+          <Converter />
             
             <CoinPriceSection />
 
@@ -76,6 +77,7 @@ React.useState(false);
                 selectedPeriod={selectedPeriod}
                 setSelectedPeriod={setSelectedPeriod}
               />
+
             <CoinChart data={historicalData}/>
         
           

@@ -17,10 +17,7 @@ const initialState = {
         amount: 500,
         coin: 1,
     },
-    // fromValue: 100,
-    // toValue: 500,
-    // fromCoin: '1',
-    // toCoin: '2',
+
 };
 
 function Converter() {
@@ -31,21 +28,12 @@ function Converter() {
         setValues ({
             from: values.to,
             to: values.from,
-            // fromValue: values.toValue,
-            // toValue: values.fromValue,
-            // fromCoin: values.toCoin,
-            // toCoin: values.fromCoin,
+
         });      
         setLeftToRight(!leftToRight);
     };
 
-    // const handleSelectChange = (e, type) => {
-    //     const { value } = e.target;
-    //     setValues(prevState => ({
-    //         ...prevState,
-    //         [type]: value,
-    //     }));
-    // };
+
 
     const handleOnChange = (event) => {
         console.log(event);
@@ -64,10 +52,10 @@ function Converter() {
     };
 
     const handleOnSelect = (event) => {
-        // console.log(event);
+
         const field = event.target.name;
         const value = event.target.value;
-        // console.log(value);
+
         
         setValues ({
             ...values,
@@ -89,14 +77,9 @@ function Converter() {
                         name="from"
                         type="text"
                         value={values.from.amount}
-                        // defaultValue={values.to.amount}
+                        
                         onChange={handleOnChange}
-                        // onChange={e =>
-                        //     setValues(prevState => ({
-                        //         ...prevState,
-                        //         fromValue: e.target.value,
-                        //     }))
-                        // }
+                        
                     />
                     </FloatingLabel>
                     
@@ -106,7 +89,7 @@ function Converter() {
                     <Form.Select 
                         value={values.from.coin}
                         name="from"
-                        // onChange={e => handleSelectChange(e, 'fromCoin')}
+                        
                         onChange={handleOnSelect}
                         >
                         <option value="1">Bitcoin</option>
@@ -132,14 +115,9 @@ function Converter() {
                         name="to"
                         type="text"  
                         value={values.to.amount}
-                        // defaultValue={values.from.amount}
+                        
                         onChange={handleOnChange}
-                        // onChange={e =>
-                        //     setValues(prevState => ({
-                        //         ...prevState,
-                        //         toValue: e.target.value,
-                        //     }))
-                        // }
+                        
                     />
                 </FloatingLabel>
                 <FloatingLabel
@@ -149,7 +127,7 @@ function Converter() {
                     <Form.Select 
                         value={values.to.coin}
                         name="to"
-                        // onChange={e => handleSelectChange(e, 'toCoin')}
+                        
                         onChange={handleOnSelect}
 
                     >
