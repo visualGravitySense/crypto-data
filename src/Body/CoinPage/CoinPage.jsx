@@ -1,4 +1,3 @@
-// import React from "react";
 import React, { useState, useEffect } from 'react';
 import CoinPriceSection from "./CoinPriceSection";
 import Row from "react-bootstrap/Row";
@@ -6,7 +5,6 @@ import Col from "react-bootstrap/Col";
 import CoinMetrics from "./CoinMetrics";
 import CoinChart from "./CoinChart";
 import ChartPeriods from "./ChartPeriods";
-// import Button from 'react-bootstrap/Button'
 import ChildModal from './ChildModal'
 import ChartModal from '../CoinPage/ChartModal';
 import ListCoins from '../ListCoins';
@@ -35,7 +33,7 @@ React.useState(false);
   }, [selectedCurrency, coinId]);
 
   React.useEffect(() => {
-    // getCoinById("btc-bitcoin", selectedCurrency.name).then(setCoinData);
+    
     getHistoricalData({
       id: coinId,
       currency: selectedCurrency.name,
@@ -53,10 +51,8 @@ React.useState(false);
   );
   }, [selectedCurrency, selectedPeriod, coinId]);
 
-  // console.log(historiacalData);
-  
-  
-// Test
+
+
   return (
     <>
      
@@ -66,10 +62,7 @@ React.useState(false);
          
         </Col>
         <Col md={8}>  
-          {/* <ListCoins /> */}
-          
-          <Converter />
-            
+                                       
             <CoinPriceSection />
 
             <ChartModal />

@@ -45,3 +45,15 @@ export const getSearch = async (q) => {
 
   return await response.json();
 }
+
+export const getCurrencyConverter = async ({
+   baseAmount, baseCurrencyId, quoteCurrencyId }) => {
+    const params = new URLSearchParams({
+        base_currency_id: baseCurrencyId,
+        quote_currency_id: quoteCurrencyId,
+        amount: baseAmount,
+    });
+
+    const response = await fetch(`${apiUrl}/price-converter?${params}`);
+    return await response.json();
+};

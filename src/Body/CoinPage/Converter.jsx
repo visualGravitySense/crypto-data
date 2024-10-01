@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import Col from 'react-bootstrap/Col';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
 import Form from 'react-bootstrap/Form';
@@ -7,15 +8,16 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 import './Converter.scss';
+import { getCurrencyConverter  } from '../../services/api';
 
 const initialState = {
     from: {
         amount: 100,
-        coin: 2,
+        coin: 'btc-bitcoin',
     },
     to: {
         amount: 500,
-        coin: 1,
+        coin: 'eth-ethereum',
     },
 
 };
@@ -23,6 +25,7 @@ const initialState = {
 function Converter() {
     const [values, setValues] = React.useState(initialState);
     const [leftToRight, setLeftToRight] = React.useState(true);
+    const [loading, setLoading] = React.useState(false);
 
     const handleClick = () => {
         setValues ({
@@ -35,11 +38,10 @@ function Converter() {
 
 
 
-    const handleOnChange = (event) => {
-        console.log(event);
+    const handleOnChange = (event) => {        
         const field = event.target.name;
         const value = event.target.value;
-        console.log(value);
+        
         
         setValues ({
             ...values,
@@ -67,38 +69,64 @@ function Converter() {
         
     };
 
+    useEffect(() => {
+        const fetchConversionRate = async () => {
+            setLoading(true);
+            try {
+                const response = await getCurrencyConverter({
+                    baseAmount: values.from.amount,
+                    baseCurrencyId: values.from.coin,
+                    quoteCurrencyId: values.to.coin,
+                });
+
+                setValues((prevValues) => ({
+                    ...prevValues,
+                    to: {
+                        ...prevValues.to,
+                        amount: response.price,  
+                    },
+                }));
+            } catch (error) {
+                console.error("Error fetching conversion rate:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchConversionRate();
+    }, [values.from.amount, values.from.coin, values.to.coin]);
+
     
     return (
         <Row className="mt-5 g-2 converter-container">
-        <Col md >
-            <InputGroup className="mb-3">
-                <FloatingLabel controlId="floatingInputGrid" label="From">
-                    <Form.Control 
-                        name="from"
-                        type="text"
-                        value={values.from.amount}
+            <Col md >
+                <InputGroup className="mb-3">
+                    <FloatingLabel controlId="floatingInputGrid" label="From">
+                        <Form.Control 
+                            name="from"
+                            type="text"
+                            value={values.from.amount}
+                            
+                            onChange={handleOnChange}
+                            
+                        />
+                        </FloatingLabel>
                         
-                        onChange={handleOnChange}
-                        
-                    />
+                    <FloatingLabel
+                        controlId="floatingSelectGrid"
+                        label="Coin">
+                        <Form.Select 
+                            value={values.from.coin}
+                            name="from"                            
+                            onChange={handleOnSelect}
+                            >
+                            <option value="btc-bitcoin">Bitcoin</option>
+                            <option value="eth-ethereum">Ethereum</option>
+                            <option value="usdt-tether">Tether</option>
+                        </Form.Select>
                     </FloatingLabel>
-                    
-                <FloatingLabel
-                    controlId="floatingSelectGrid"
-                    label="Coin">
-                    <Form.Select 
-                        value={values.from.coin}
-                        name="from"
-                        
-                        onChange={handleOnSelect}
-                        >
-                        <option value="1">Bitcoin</option>
-                        <option value="2">Ethereum</option>
-                        <option value="3">Tether</option>
-                    </Form.Select>
-                </FloatingLabel>
-            </InputGroup>            
-        </Col>
+                </InputGroup>            
+            </Col>
 
             <Col md="auto" className="d-flex align-items-center button-change"> 
                 <FontAwesomeIcon 
@@ -108,37 +136,38 @@ function Converter() {
                     /> 
             </Col>
 
-        <Col md>
-            <InputGroup className="mb-3">
-                <FloatingLabel controlId="toInput" label="To">
-                    <Form.Control 
-                        name="to"
-                        type="text"  
-                        value={values.to.amount}
-                        
-                        onChange={handleOnChange}
-                        
-                    />
-                </FloatingLabel>
-                <FloatingLabel
-                    controlId="to"
-                    label="Coin"
-                    >
-                    <Form.Select 
-                        value={values.to.coin}
-                        name="to"
-                        
-                        onChange={handleOnSelect}
+            <Col md>
+                <InputGroup className="mb-3">
+                    <FloatingLabel controlId="toInput" label="To">
+                        <Form.Control 
+                            name="to"
+                            type="text"  
+                            // value={values.to.amount}
+                            value={loading ? "Loading..." : values.to.amount}
+                            readOnly
+                            // onChange={handleOnChange}
+                            
+                        />
+                    </FloatingLabel>
+                    <FloatingLabel
+                        controlId="to"
+                        label="Coin"
+                        >
+                        <Form.Select 
+                            value={values.to.coin}
+                            name="to"
+                            
+                            onChange={handleOnSelect}
 
-                    >
-                        <option value="1">Bitcoin</option>
-                        <option value="2">Ethereum</option>
-                        <option value="3">Tether</option>
-                    </Form.Select>
-                </FloatingLabel>
-            </InputGroup>
-        </Col>
-    </Row>
+                        >
+                            <option value="btc-bitcoin">Bitcoin</option>
+                            <option value="eth-ethereum">Ethereum</option>
+                            <option value="usdt-tether">Tether</option>
+                        </Form.Select>
+                    </FloatingLabel>
+                </InputGroup>
+            </Col>
+        </Row>
     );
 }
 
