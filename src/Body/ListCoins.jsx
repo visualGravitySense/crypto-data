@@ -4,10 +4,12 @@ import { getCoinList } from "../services/api";
 import Alert from "react-bootstrap/Alert";
 import PriceNumber from "./PriceNumber";
 import { useNavigate } from "react-router-dom";
+import ErrorModal from "./ErrorModal";
 
 function ListCoins({ selectedCurrency }) {
   const [coinList, setCoinList] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
+  const [errorMessage, setErrorMessage] = React.useState(null);
 
   const navigate = useNavigate();
 
@@ -16,8 +18,9 @@ function ListCoins({ selectedCurrency }) {
     setIsLoading(true);
     getCoinList(selectedCurrency.name).then((data) => {
       setCoinList(data.slice(0, 10)); // Ограничение до 10 монет
-      setIsLoading(false);
-    });
+      
+    }).catch(error => setErrorMessage("Coin List is not available. Error: " + error.toString()))
+    .finally(() => setIsLoading(false));
   }, [selectedCurrency]);
 
   // Показ индикатора загрузки
@@ -29,6 +32,8 @@ function ListCoins({ selectedCurrency }) {
     );
 
   return (
+    <>
+    
     <div className="table-responsive"> {/* Добавляем table-responsive для адаптивности */}
       <Table striped bordered hover>
         <thead>
@@ -73,6 +78,12 @@ function ListCoins({ selectedCurrency }) {
         </tbody>
       </Table>
     </div>
+    <ErrorModal 
+      errorMessage={errorMessage} 
+      show={!!errorMessage} 
+      handleClose={() => setErrorMessage(null)} 
+      />
+    </>
   );
 }
 
