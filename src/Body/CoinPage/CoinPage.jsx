@@ -15,12 +15,14 @@ import { periods } from './constant';
 import moment from 'moment';
 import { useParams } from 'react-router-dom';
 import Converter from './Converter';
+import ErrorModal from '../ErrorModal';
 
 
 function CoinPage({ selectedCurrency }) {
   const [childModalShow, setChildModalShow] = React.useState(false);
   const [historicalData, setHistoricalData] = React.useState([]);
   const [selectedPeriod, setSelectedPeriod] = React.useState(periods[0]);
+  const [errorMessage, setErrorMessage] = React.useState(null);
 
   const { coinId } = useParams();
 
@@ -50,7 +52,8 @@ React.useState(false);
         
       )
     )
-  );
+  ).catch(error => setErrorMessage("Historical data i not available at the moment. Error: " + 
+      error.toString()));
   }, [selectedCurrency, selectedPeriod, coinId]);
 
   // console.log(historiacalData);
@@ -94,6 +97,13 @@ React.useState(false);
         <CoinChart data={historicalData}/>
         
       </ChildModal>
+
+      <ErrorModal 
+      errorMessage={errorMessage} 
+      show={!!errorMessage} 
+      handleClose={() => setErrorMessage(null)} 
+      />
+
     </>
   );
 }
