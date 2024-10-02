@@ -10,7 +10,7 @@ function Body(props) {
     return (
         <>
             <GlobalData />
-
+            <Converter />
             <Routes>
                 <Route path="/" element={<ListCoins {...props} /> } />
                 <Route path="/coin/:coinId" element={<CoinPage {...props} />} />
