@@ -6,9 +6,16 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { currencies } from "../constants";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { setSelectedCurrency } from "../services/store";
 
-function Navigation({ selectedCurrency, setSelectedCurrency }) {
+function Navigation() {
   const navigate = useNavigate();
+
+  const dispatch = useDispatch();
+
+  const selectedCurrency = useSelector((state) => state.selectedCurrency);
+
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -42,7 +49,7 @@ function Navigation({ selectedCurrency, setSelectedCurrency }) {
                 <NavDropdown.Item
                   active={selectedCurrency.name === currency.name}
                   key={currency.name}
-                  onClick={() => setSelectedCurrency(currency)}
+                  onClick={() => dispatch(setSelectedCurrency(currency))}
                 >
                   {currency.name} {currency.symbol}
                 </NavDropdown.Item>
