@@ -1,4 +1,5 @@
 import Table from "react-bootstrap/Table";
+// import ErrorModal from "./ErrorModal";
 
 function CoinMetrics({ name, symbol, quotes, currency, total_supply }) {
   return (
@@ -31,6 +32,11 @@ function CoinMetrics({ name, symbol, quotes, currency, total_supply }) {
           </tr>
         </tbody>
       </Table>
+      {/* <ErrorModal 
+      errorMessage={errorMessage} 
+      show={!!errorMessage} 
+      handleClose={() => setErrorMessage(null)} 
+      /> */}
     </>
   );
 }

@@ -9,6 +9,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowsRotate } from '@fortawesome/free-solid-svg-icons';
 import './Converter.scss';
 import { getCurrencyConverter  } from '../../services/api';
+import ErrorModal from '../ErrorModal';
 
 const initialState = {
     from: {
@@ -69,6 +70,8 @@ function Converter() {
         
     };
 
+    const [errorMessage, setErrorMessage] = React.useState(null);
+
     useEffect(() => {
         const fetchConversionRate = async () => {
             setLoading(true);
@@ -98,6 +101,7 @@ function Converter() {
 
     
     return (
+        <>
         <Row className="mt-5 g-2 converter-container">
             <Col md >
                 <InputGroup className="mb-3">
@@ -168,6 +172,13 @@ function Converter() {
                 </InputGroup>
             </Col>
         </Row>
+
+        <ErrorModal 
+            errorMessage={errorMessage} 
+            show={!!errorMessage} 
+            handleClose={() => setErrorMessage(null)} 
+            />
+        </>
     );
 }
 
