@@ -1,15 +1,21 @@
 import React from "react";
 import Table from "react-bootstrap/Table";
 import { getGlobalData } from "../services/api";
+import ErrorModal from "./ErrorModal";
+
+
 
 function GlobalData() {
   const [globalData, setGlobalData] = React.useState({});
+  const [errorMessage, setErrorMessage] = React.useState(null);
 
   React.useEffect(() => {
-    getGlobalData().then(setGlobalData);
+    getGlobalData().then(setGlobalData).catch(error => setErrorMessage("Coin List is not available. Error: " + error.toString()))
+    .finally(() => setIsLoading(false));;
   }, []);
 
   return (
+    <>
     <Table>
       <tbody>
         <tr>
@@ -26,6 +32,13 @@ function GlobalData() {
         </tr>
       </tbody>
     </Table>
+    <ErrorModal 
+      errorMessage={errorMessage} 
+      show={!!errorMessage} 
+      handleClose={() => setErrorMessage(null)} 
+      />
+    
+    </>
   );
 }
 
