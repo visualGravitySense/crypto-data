@@ -16,6 +16,7 @@ import Converter from "./Converter";
 // import ErrorModal from '../ErrorModal';
 import { useSelector, useDispatch } from "react-redux";
 import { setErrorMessage } from "../../services/store";
+import { BodyContext } from "../../providers/BodyProvider";
 
 function CoinPage() {
   const dispatch = useDispatch();
@@ -27,20 +28,24 @@ function CoinPage() {
 
   const selectedCurrency = useSelector((state) => state.selectedCurrency);
 
-  React.useState(false);
+  const { setHistoryLog } = React.useContext(BodyContext);
+
   const [coinData, setCoinData] = React.useState({});
 
   const handleShow = () => setChildModalShow(true);
   const handleClose = () => setChildModalShow(false);
 
   React.useEffect(() => {
-    getCoinById(coinId, selectedCurrency.name).then(setCoinData).catch((error) =>
-      dispatch(
-        setErrorMessage(
-          "Coin List is not available. Error: " + error.toString()
-        )
-      )
-    );;
+    getCoinById(coinId, selectedCurrency.name).then((data) => {
+      setHistoryLog((prevState) => [
+        ...prevState.filter((log) => log.id !== coinId),
+        {
+          id: coinId,
+          name: data.name,
+        },
+      ]);
+      setCoinData(data);
+    });
   }, [selectedCurrency, coinId]);
 
   React.useEffect(() => {
@@ -50,14 +55,14 @@ function CoinPage() {
       start: selectedPeriod.start(),
       interval: selectedPeriod.interval,
     })
-      .then((data) =>
+      .then((data) => {
         setHistoricalData(
           data?.map(({ timestamp, ...rest }) => ({
             ...rest,
             timestamp: moment(timestamp).format(selectedPeriod.format),
           }))
-        )
-      )
+        );
+      })
       .catch((error) =>
         dispatch(
           setErrorMessage(

@@ -8,10 +8,12 @@ import CoinPage from "./CoinPage/CoinPage";
 import ErrorModal from "./ErrorModal";
 import BodyProvider from "../providers/BodyProvider";
 import ExchangeList from "./ExchangeList";
+import HistoryLog from "./HistoryLog";
 
 function Body(props) {
   return (
     <BodyProvider>
+      <HistoryLog />
       <GlobalData />
       <Converter />
       <Routes>
