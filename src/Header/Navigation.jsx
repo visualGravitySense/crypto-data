@@ -55,6 +55,9 @@ function Navigation() {
                 </NavDropdown.Item>
               ))}
             </NavDropdown>
+            <Link to="/exchange" className="nav-link">
+            Exchanges
+            </Link>
             <Nav.Link href="#" disabled>
               Link
             </Nav.Link>
