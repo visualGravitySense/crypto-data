@@ -6,19 +6,22 @@ import Converter from "./CoinPage/Converter";
 import { Routes, Route } from "react-router-dom";
 import CoinPage from "./CoinPage/CoinPage";
 import ErrorModal from "./ErrorModal";
+import BodyProvider from "../providers/BodyProvider";
+import ExchangeList from "./ExchangeList";
 
 function Body(props) {
   return (
-    <>
+    <BodyProvider>
       <GlobalData />
       <Converter />
       <Routes>
         <Route path="/" element={<ListCoins {...props} />} />
         <Route path="/coin/:coinId" element={<CoinPage {...props} />} />
         <Route path="/search/:q" element={<SearchResult />} />
+        <Route path="/exchange" element={<ExchangeList />} />
       </Routes>
       <ErrorModal />
-    </>
+    </BodyProvider>
   );
 }
 
