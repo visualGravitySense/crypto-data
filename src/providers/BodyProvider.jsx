@@ -4,6 +4,7 @@ import { getExchangeList } from '../services/api';
 export const BodyContext = React.createContext();
 
 function BodyProvider({ children }) {
+    const [historyLog, setHistoryLog] = React.useState([]);
     const [exchangeList, setExchangeList] = React.useState([]);
 
     React.useEffect(() => {
@@ -12,6 +13,8 @@ function BodyProvider({ children }) {
 
     const context = {
         exchangeList,
+        historyLog,
+        setHistoryLog,
     };
 
     console.log(exchangeList);
