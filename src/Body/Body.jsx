@@ -9,6 +9,7 @@ import ErrorModal from "./ErrorModal";
 import BodyProvider from "../providers/BodyProvider";
 import ExchangeList from "./ExchangeList";
 import HistoryLog from "./HistoryLog";
+import ComparePage from "./ComparePage";
 
 function Body(props) {
   return (
@@ -21,6 +22,7 @@ function Body(props) {
         <Route path="/coin/:coinId" element={<CoinPage {...props} />} />
         <Route path="/search/:q" element={<SearchResult />} />
         <Route path="/exchange" element={<ExchangeList />} />
+        <Route path="/compare" element={<ComparePage />} />
       </Routes>
       <ErrorModal />
     </BodyProvider>
