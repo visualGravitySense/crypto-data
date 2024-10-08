@@ -17,6 +17,8 @@ import Converter from "./Converter";
 import { useSelector, useDispatch } from "react-redux";
 import { setErrorMessage } from "../../services/store";
 import { BodyContext } from "../../providers/BodyProvider";
+import Button from "react-bootstrap/Button";
+
 
 function CoinPage() {
   const dispatch = useDispatch();
@@ -28,12 +30,13 @@ function CoinPage() {
 
   const selectedCurrency = useSelector((state) => state.selectedCurrency);
 
-  const { setHistoryLog } = React.useContext(BodyContext);
+  const { setHistoryLog, setCompareList, compareList } = React.useContext(BodyContext);
 
   const [coinData, setCoinData] = React.useState({});
 
   const handleShow = () => setChildModalShow(true);
   const handleClose = () => setChildModalShow(false);
+  const handleOnClick = () => setCompareList([...compareList, coinData]);
 
   React.useEffect(() => {
     getCoinById(coinId, selectedCurrency.name).then((data) => {
@@ -77,6 +80,8 @@ function CoinPage() {
       <Row>
         <Col md={4}>
           <CoinMetrics {...coinData} currency={selectedCurrency} />
+
+          <Button className="w-100" onClick={handleOnClick}>Add to compare</Button>
         </Col>
         <Col md={8}>
           <CoinPriceSection />

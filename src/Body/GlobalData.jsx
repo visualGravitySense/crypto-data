@@ -18,7 +18,7 @@ function GlobalData() {
           "Coin List is not available. Error: " + error.toString()
         )
       )
-      .finally(() => setIsLoading(false));
+      // .finally(() => setIsLoading(false));
   }, []);
 
   return (

@@ -58,6 +58,9 @@ function Navigation() {
             <Link to="/exchange" className="nav-link">
             Exchanges
             </Link>
+            <Link to="/compare" className="nav-link">
+            Compare
+            </Link>
             <Nav.Link href="#" disabled>
               Link
             </Nav.Link>
