@@ -1,0 +1,127 @@
+/* Footer Styles */
+
+.footer {
+  padding: 2rem 0;
+  background-color: #f0f0f0;
+  color: #000;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+
+  &-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  &-links {
+    margin-bottom: 1.5rem;
+
+    a {
+      color: #000;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s ease;
+
+      &:hover {
+        border-bottom-color: #000;
+      }
+    }
+  }
+
+  &-social {
+    margin-bottom: 1.5rem;
+
+    a {
+      color: #000;
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #555;
+      }
+    }
+  }
+
+  &-subscribe {
+    form {
+      display: inline-flex;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 2px solid #000;
+      border-radius: 0.25rem;
+      margin-right: 0.5rem;
+    }
+
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      color: #fff;
+      background-color: #000;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #333;
+      }
+    }
+  }
+
+  &-info {
+    font-size: 0.875rem;
+
+    p {
+      margin: 0.5rem 0;
+    }
+  }
+
+  /* Dark Mode */
+  &.dark-mode {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+
+    &-links {
+      a {
+        color: #f0f0f0;
+
+        &:hover {
+          border-bottom-color: #f0f0f0;
+        }
+      }
+    }
+
+    &-social {
+      a {
+        color: #f0f0f0;
+
+        &:hover {
+          color: #bbb;
+        }
+      }
+    }
+
+    &-subscribe {
+      input, 
+      button {
+        border-color: #f0f0f0;
+      }
+
+      button {
+        background-color: #333;
+
+        &:hover {
+          background-color: #555;
+        }
+      }
+    }
+  }
+}
