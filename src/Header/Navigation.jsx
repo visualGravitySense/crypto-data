@@ -33,7 +33,7 @@ function Navigation() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary mb-4">
       <Container fluid>
-        <Navbar.Brand href="/">Bison Wise</Navbar.Brand>
+        <Navbar.Brand>Bison Wise</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
