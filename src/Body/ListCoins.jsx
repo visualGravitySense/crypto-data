@@ -10,6 +10,8 @@ import { setErrorMessage } from "../services/store";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
+import AboutSection from "./AboutSection"; 
+
 function ListCoins() {
   const dispatch = useDispatch();  
   const [coinList, setCoinList] = React.useState([]);
@@ -25,7 +27,7 @@ function ListCoins() {
     setIsLoading(true);
     getCoinList(selectedCurrency.name)
       .then((data) => {
-        setCoinList(data.slice(0, 10)); // Ограничение до 10 монет
+        setCoinList(data.slice(0, 100)); // Ограничение до 10 монет
       })
       .catch((error) =>
         dispatch(
@@ -47,34 +49,35 @@ function ListCoins() {
 
   return (
     <>
-    <Col md={4}>
+    <Row>
+  <Col md={4}>
+    <AboutSection />
+  </Col>
 
-    </Col>
-
-    <Col md={8}>
-      <div className="table-responsive">
-        {" "}
-        {/* Добавляем table-responsive для адаптивности */}
-        <Table striped bordered hover>
+  <Col md={8}>
+    {/* Контейнер для таблицы с вертикальным скроллом */}
+    <div style={{ maxHeight: "500px", overflowY: "auto", position: "relative" }}>
+      {/* Горизонтальная прокрутка, закрепленная внизу */}
+      <div
+        className="table-wrapper"
+        style={{ overflowX: "auto", position: "sticky", bottom: 0 }}
+      >
+        <Table striped bordered hover className="crypto-table">
           <thead>
             <tr>
               <th>#</th>
               <th>Name</th>
               <th>Price</th>
               <th className="d-none d-md-table-cell">1h</th>
-              {/* Скрываем на мобильных */}
               <th className="d-none d-md-table-cell">24h</th>
-              {/* Скрываем на мобильных */}
               <th className="d-none d-lg-table-cell">7d</th>
-              {/* Скрываем на малых и средних экранах */}
               <th>Volume(24h)</th>
               <th>MarketCap</th>
               <th className="d-none d-lg-table-cell">Max supply</th>
-              {/* Скрываем на малых экранах */}
             </tr>
           </thead>
           <tbody>
-            {coinList.map((coin) => (
+            {coinList.slice(0, 100).map((coin) => (
               <tr key={coin.rank} onClick={() => navigate("/coin/" + coin.id)}>
                 <td>{coin.rank}</td>
                 <td>{coin.name}</td>
@@ -109,15 +112,11 @@ function ListCoins() {
             ))}
           </tbody>
         </Table>
-
-        
       </div>
-      </Col>
-      {/* <ErrorModal 
-      errorMessage={errorMessage} 
-      show={!!errorMessage} 
-      handleClose={() => setErrorMessage(null)} 
-      /> */}
+    </div>
+  </Col>
+</Row>
+
     </>
   );
 }
