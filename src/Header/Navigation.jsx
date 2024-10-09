@@ -33,7 +33,7 @@ function Navigation() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary mb-4">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="/">Bison Wise</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -43,7 +43,7 @@ function Navigation() {
           >
             <Link to="/" className="nav-link">Home</Link>
             {/* <Nav.Link href="#action1">Home</Nav.Link> */}
-            <Nav.Link href="#action2">Link</Nav.Link>
+            {/* <Nav.Link href="#action2">Link</Nav.Link> */}
             <NavDropdown title="Currency" id="navbarScrollingDropdown">
               {currencies.map((currency) => (
                 <NavDropdown.Item
@@ -61,9 +61,9 @@ function Navigation() {
             <Link to="/compare" className="nav-link">
             Compare
             </Link>
-            <Nav.Link href="#" disabled>
+            {/* <Nav.Link href="#" disabled>
               Link
-            </Nav.Link>
+            </Nav.Link> */}
           </Nav>
           <Form className="d-flex" onSubmit={handleSubmit}>
             <Form.Control

@@ -11,6 +11,7 @@ import ExchangeList from "./ExchangeList";
 import HistoryLog from "./HistoryLog";
 import ComparePage from "./ComparePage";
 import CourseDetail from "../Body/Courses/CourseDetail";
+import PromoBanners from "./PromoBanners"; 
 
 function Body(props) {
   return (
@@ -27,6 +28,7 @@ function Body(props) {
         <Route path="/exchange" element={<ExchangeList />} />
         <Route path="/compare" element={<ComparePage />} />
       </Routes>
+      <PromoBanners />
       <ErrorModal />
     </BodyProvider>
   );
