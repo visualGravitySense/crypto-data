@@ -25,12 +25,24 @@
   display: inline-block; // Ensures the border fits tightly around the word
 }
 
+.highlighted-item {
+  color: rgb(117, 119, 127);
+  background-color: #ddd1fb46;
+  border: 2px solid #b7c2d3a5; // Black border
+  padding: 1px 5px; // Spacing inside the border
+  border-radius: 50px; // Rounded corners
+  display: inline-block; // Ensures the border fits tightly around the word
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+}
+
 
 .hero-section {
   padding: 3rem 0;
   // background-color: $light-color;
   display: flex;
   justify-content: center;
+  text-align: left;
 
   .hero-container {
     display: flex;
@@ -43,7 +55,7 @@
   .hero-content {
     flex: 2; // Занимает 2/3 ширины
     padding-right: 2rem; // Отступ справа для разделения контента
-    text-align: left;
+    ta
 
     h1 {
       font-size: 3rem;

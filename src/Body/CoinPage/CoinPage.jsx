@@ -20,6 +20,8 @@ import { BodyContext } from "../../providers/BodyProvider";
 import Button from "react-bootstrap/Button";
 
 
+
+
 function CoinPage() {
   const dispatch = useDispatch();
   const [childModalShow, setChildModalShow] = React.useState(false);

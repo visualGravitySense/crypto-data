@@ -1,0 +1,145 @@
+// Переменные для цветов и других значений
+$primary-color: #000;
+$background-light: #f0f0f0;
+$background-dark: #1e1e1e;
+$accent-color: #fff;
+
+// Миксин для переходов
+@mixin transition-effect($property, $duration) {
+  transition: $property $duration ease;
+}
+
+// Общие стили
+.about-section {
+  padding: 3rem 0;
+  background-color: $background-light;
+  color: $primary-color;
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+
+  &.dark-mode {
+    background-color: $background-dark;
+    color: $accent-color;
+
+    h2 {
+      border-color: $accent-color;
+    }
+
+    .about-info {
+      background-color: darken($background-dark, 10%);
+      color: $accent-color;
+      border-color: $accent-color;
+
+      &:hover {
+        box-shadow: 8px 8px 0 $accent-color;
+      }
+    }
+
+    .btn-primary, .btn-outline-secondary {
+      border: 2px solid $accent-color;
+      color: $accent-color;
+
+      &:hover {
+        background-color: $accent-color;
+        color: $background-dark;
+        box-shadow: 5px 5px 0 $accent-color;
+      }
+    }
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    border-bottom: 2px solid $primary-color;
+    display: inline-block;
+    padding-bottom: 1rem;
+  }
+  
+  .about-info {
+    background-color: $accent-color;
+    border: 3px solid $primary-color;
+    box-shadow: 5px 5px 0 $primary-color;
+    padding: 2rem;
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+  
+    // Применение миксина для каждого свойства отдельно
+    @include transition-effect(transform, 0.3s);
+    @include transition-effect(box-shadow, 0.3s);
+  
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 8px 8px 0 $primary-color;
+    }
+  }
+  
+    
+    p {
+      text-align: left;
+      font-size: 1rem;
+      line-height: 1.5;
+      margin: 1rem 0 0;
+    }
+  }
+  
+  .about-image {
+    width: 75%;
+    margin: 0px 0px 20px 0px;
+    // align-items: left;
+    aspect-ratio: 1/1; /* Makes it a perfect square */
+    object-fit: cover; /* Ensures the image covers the whole area */
+    border-radius: 50%; /* Makes the image circular */
+  }
+
+  .social-icons {
+    // margin-bottom: 1.5rem;
+
+    a {
+      color: #000;
+      margin: 0 0.5rem;
+      font-size: 1.5rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #555;
+      }
+    }
+  }
+
+  .btn-outline-secondary {
+    background-color: transparent;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    box-shadow: 3px 3px 0 $primary-color;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    @include transition-effect(background-color, 0.3s);
+
+    &:hover {
+      background-color: $primary-color;
+      color: $accent-color;
+      box-shadow: 5px 5px 0 $primary-color;
+    }
+  }
+
+  .crypto-table {
+    font-size: 14px;
+    white-space: nowrap;
+  }
+  
+  .crypto-table td, .crypto-table th {
+    padding: 10px;
+    vertical-align: middle;
+  }
+  
+  .table-wrapper {
+    overflow-x: auto; /* Горизонтальная прокрутка */
+    position: sticky; /* Закрепляем внизу */
+    bottom: 0;
+  }
+    
+    
+
