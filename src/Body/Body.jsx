@@ -12,6 +12,7 @@ import HistoryLog from "./HistoryLog";
 import ComparePage from "./ComparePage";
 import CourseDetail from "../Body/Courses/CourseDetail";
 import PromoBanners from "./PromoBanners"; 
+import BlogPost from "./BlogPost";
 
 function Body(props) {
   return (
@@ -27,6 +28,7 @@ function Body(props) {
         <Route path="/search/:q" element={<SearchResult />} />
         <Route path="/exchange" element={<ExchangeList />} />
         <Route path="/compare" element={<ComparePage />} />
+        <Route path="/post/:postId" element={<BlogPost />} />{" "}
       </Routes>
       <PromoBanners />
       <ErrorModal />
