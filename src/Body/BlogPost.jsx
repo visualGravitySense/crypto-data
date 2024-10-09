@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import "./BlogPost.css"; // Custom styling if necessary
 
 // const BlogPost = () => {
 //   const { postId } = useParams();
 //   const [content, setContent] = useState("");
 
-function PostPage() {
+function BlogPost() {
   const { postId } = useParams(); // Получаем postId из URL
   const [postContent, setPostContent] = useState('');
 
