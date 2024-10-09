@@ -1,0 +1,25 @@
+/* Home.css */
+.home-page {
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Dark Mode Styles */
+  .home-page.dark-mode {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+  }
+  
+  /* Additional Styles for Dark Mode */
+  .home-page.dark-mode .hero-section,
+  .home-page.dark-mode .featured-courses,
+  .home-page.dark-mode .course-categories,
+  .home-page.dark-mode .popular-courses,
+  .home-page.dark-mode .promo-banners,
+  .home-page.dark-mode .about-section,
+  .home-page.dark-mode .student-testimonials {
+    background-color: #333;
+    color: #f0f0f0;
+  }
+  
