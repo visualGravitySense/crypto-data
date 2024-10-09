@@ -1,0 +1,124 @@
+/* Hero Section */
+
+.hide-on-mobile {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}
+
+
+.responsive-text {
+  width: 100%; // Default for mobile screens
+  margin: 0 auto; // Center the text block
+
+  @media (min-width: 768px) { // For larger screens (tablet and above)
+    width: 50%;
+  }
+}
+
+
+.highlighted-word {
+  background-color: #8de2d8;
+  border: 2px solid #000; // Black border
+  padding: 5px 20px; // Spacing inside the border
+  border-radius: 50px; // Rounded corners
+  display: inline-block; // Ensures the border fits tightly around the word
+}
+
+
+.hero-section {
+  padding: 3rem 0;
+  // background-color: $light-color;
+  display: flex;
+  justify-content: center;
+
+  .hero-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; // Ограничиваем максимальную ширину контейнера
+    width: 100%;
+  }
+
+  .hero-content {
+    flex: 2; // Занимает 2/3 ширины
+    padding-right: 2rem; // Отступ справа для разделения контента
+    text-align: left;
+
+    h1 {
+      font-size: 3rem;
+      // color: $primary-color;
+      // text-shadow: 3px 3px 0 $highlight-color;
+    }
+
+    p {
+      font-size: 1.25rem;
+      // color: darken($primary-color, 30%);
+      margin-bottom: 2rem;
+      line-height: 1.5;
+    }
+
+    .btn-primary {
+      background-color: #000;
+      // border: 2px solid $primary-color;
+      color: #fff;
+      text-transform: uppercase;
+      // box-shadow: 3px 3px 0 $primary-color;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      font-size: 1rem;
+      padding: 0.75rem 1.5rem;
+
+      &:hover {
+        background-color: #8de2d8;
+        color: #000;
+        // box-shadow: 5px 5px 0 $primary-color;
+      }
+    }
+
+    .new-block {
+      margin-top: 2rem;
+
+      
+
+      
+
+      .new-block-text {
+        font-size: 1.15rem;
+        // color: lighten($primary-color, 20%);
+        margin-bottom: 1.5rem;
+
+        
+        
+      }
+
+      
+    }
+  }
+
+  .hero-image {
+    flex: 1; // Занимает 1/3 ширины
+    display: flex;
+    justify-content: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-container {
+      flex-direction: column; // Вертикальная ориентация на мобильных
+    }
+
+    .hero-content {
+      padding-right: 0;
+    }
+
+    .hero-image {
+      margin-top: 2rem;
+    }
+  }
+
+
+}

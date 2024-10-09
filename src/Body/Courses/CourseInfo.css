@@ -1,0 +1,49 @@
+.course-info {
+    padding: 3rem 0;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #f0f0f0;
+    text-align: center;
+  }
+  
+  .course-info h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: #333;
+    border-bottom: 2px solid #000;
+    display: inline-block;
+    margin-bottom: 2rem;
+  }
+  
+  .course-info-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .course-info-list li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+  
+  .course-info-list li .icon {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+  
+  .course-info.dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .course-info.dark-mode h2 {
+    color: #fff;
+    border-bottom: 2px solid #fff;
+  }
+  
+  .course-info.dark-mode .icon {
+    color: #fff;
+  }
+  

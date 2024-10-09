@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 // import ErrorModal from "./ErrorModal";
 import { useSelector, useDispatch } from "react-redux";
 import { setErrorMessage } from "../services/store";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function ListCoins() {
   const dispatch = useDispatch();  
@@ -45,6 +47,11 @@ function ListCoins() {
 
   return (
     <>
+    <Col md={4}>
+
+    </Col>
+
+    <Col md={8}>
       <div className="table-responsive">
         {" "}
         {/* Добавляем table-responsive для адаптивности */}
@@ -102,7 +109,10 @@ function ListCoins() {
             ))}
           </tbody>
         </Table>
+
+        
       </div>
+      </Col>
       {/* <ErrorModal 
       errorMessage={errorMessage} 
       show={!!errorMessage} 
