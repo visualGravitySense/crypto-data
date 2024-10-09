@@ -2,7 +2,7 @@ import GlobalData from "./GlobalData";
 import ListCoins from "./ListCoins";
 import SearchResult from "./SearchResult";
 // import ChartModal from './CoinPage/ChartModal';
-import Converter from "./CoinPage/Converter";
+
 import { Routes, Route } from "react-router-dom";
 import CoinPage from "./CoinPage/CoinPage";
 import ErrorModal from "./ErrorModal";
@@ -17,7 +17,7 @@ function Body(props) {
     <BodyProvider>
       <HistoryLog />
       <GlobalData />
-      <Converter />
+      {/* <Converter /> */}
       <Routes>
         <Route path="/" element={<ListCoins {...props} />} />
 

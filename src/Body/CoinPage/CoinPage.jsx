@@ -81,20 +81,33 @@ function CoinPage() {
     <>
       <Row>
         <Col md={4}>
+        <br></br>
           <CoinMetrics {...coinData} currency={selectedCurrency} />
+          
 
           <Button className="w-100" onClick={handleOnClick}>Add to compare</Button>
-        </Col>
-        <Col md={8}>
-          <CoinPriceSection />
+          <br></br>
+          <br></br>
 
-          <ChartModal />
           <ChartPeriods
             selectedPeriod={selectedPeriod}
             setSelectedPeriod={setSelectedPeriod}
           />
 
+          
+          <br></br>
+        </Col>
+        <Col md={8}>
+        <br></br>
+          {/* <CoinPriceSection /> */}
+          {/* <ChartModal /> */}
+          
+          
+
           <CoinChart data={historicalData} />
+          <br></br>
+
+          
 
           {/* <Button onClick={handleShow} variant="primary">
             Zoom Chart

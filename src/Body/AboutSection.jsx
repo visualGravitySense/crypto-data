@@ -16,14 +16,14 @@ const AboutSection = () => {
           
           
       <section className="about-section">      
-        <h2>About Us</h2>
+        <h2>About Community</h2>
 
             <div className="about-container">
               
               <div className="about-info">
                 
                 <p>
-                We are passionate about cryptocurrency and dedicated to empowering users with innovative tools. Our team of experts conducts in-depth research to understand the ever-evolving crypto landscape, ensuring that our solutions are both intuitive and effective. Whether you're a seasoned trader or just starting your journey, we strive to provide you with the resources you need to navigate the world of digital currencies with confidence. Join us as we explore the future of finance together!                </p>
+                We are passionate about cryptocurrency and dedicated to empowering users with innovative tools. Our team of experts conducts in-depth research to understand the ever-evolving crypto landscape, ensuring that our solutions are both intuitive and effective. Whether you're a seasoned trader or just starting your journey, we strive to provide you with the resources you need to navigate the world of digital currencies with confidence. </p>
                 <p>
                 </p><br></br>
                 

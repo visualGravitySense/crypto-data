@@ -11,6 +11,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
 import AboutSection from "./AboutSection"; 
+import Converter from "./CoinPage/Converter"; 
 
 function ListCoins() {
   const dispatch = useDispatch();  
@@ -55,6 +56,7 @@ function ListCoins() {
   </Col>
 
   <Col md={8}>
+    <Converter />
     {/* Контейнер для таблицы с вертикальным скроллом */}
     <div style={{ maxHeight: "500px", overflowY: "auto", position: "relative" }}>
       {/* Горизонтальная прокрутка, закрепленная внизу */}
