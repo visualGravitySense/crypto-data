@@ -8,14 +8,12 @@ const PromoBanners = () => {
     {
       id: 'NFT-in-Digital-Art',
       description: 'The Role of NFTs in Digital Art and Beyond',
-      // instructor: 'Dmitri Gornakov',
-      // image: 'https://via.placeholder.com/800x400',
+      
     },
     {
       id: 'uiux-design',
       description: 'Enhancing User Experience: Key Guidelines for Effective Website Design',
-      // instructor: 'Dmitri Gornakov',
-      // image: 'https://via.placeholder.com/800x400',
+      
     },
     
     
