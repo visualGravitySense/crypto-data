@@ -149,3 +149,105 @@
     }
   }
 }
+
+.checkout-container {
+  display: flex;
+  flex-direction: row; // Располагает элементы по вертикали
+  gap: 2rem; // Добавляем отступы между компонентами
+  padding: 2rem;
+
+
+.checkout-section {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  color: #000;
+  font-family: 'Courier New', Courier, monospace;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .checkout-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+
+    th, td {
+      padding: 1rem;
+      border: 2px solid #000;
+      text-align: center;
+      font-size: 1.25rem;
+    }
+
+    th {
+      background-color: #3b353b; // яркий цвет заголовков в стиле anti design
+      color: #fff;
+    }
+
+    td {
+      background-color: #fff;
+      color: #000;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f0f0f0; // чередование строк
+    }
+  }
+
+  .checkout-total {
+    text-align: right;
+    margin-right: 2rem;
+
+    h3 {
+      font-size: 2rem;
+      color: #ff00ff; // контрастный цвет для общей суммы
+      border-bottom: 3px solid #000;
+      padding-bottom: 0.5rem;
+    }
+  }
+}
+
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+input, select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+}
+
+.submit-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 4px;
+}
+
+.submit-btn:hover {
+  background-color: #218838;
+}
