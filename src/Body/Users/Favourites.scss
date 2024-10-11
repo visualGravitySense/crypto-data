@@ -212,11 +212,13 @@
 }
 
 .checkout-form {
+  
   display: flex;
   flex-direction: column;
 }
 
 .form-group {
+  
   margin-bottom: 1rem;
 }
 
@@ -226,11 +228,12 @@ label {
 
 input, select {
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-top: 0.5rem;
+  margin: 5px;
   width: 100%;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  border: 3px solid #4d464630;
+  border-radius: 14px;
 }
 
 .error {
@@ -251,3 +254,74 @@ input, select {
 .submit-btn:hover {
   background-color: #218838;
 }
+
+.profile-section {
+    padding: 2rem;
+    background-color: #f0f0f0;
+    color: #000;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+  }
+  
+  .profile-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid #000;
+    display: inline-block;
+  }
+  
+  .profile-info {
+    margin-bottom: 2rem;
+  }
+  
+  .profile-info p {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+  
+  .edit-input {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 2px solid #000;
+    width: 100%;
+  }
+  
+  .user-courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .course-card {
+    /* background-color: #fff; */
+    border: 3px solid #000;
+    padding: 0.5rem;
+    margin: 1rem;
+    box-shadow: 7px 7px 0 #000;
+    /* width: 250px; */
+    text-align: left;
+  }
+  
+  .course-card h4 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid #000;
+    margin-bottom: 1rem;
+  }
+
+
+  
+  .btn-edit, .btn-save {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #000;
+    box-shadow: 5px 5px 0 #000;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+  }
+  
+  .btn-edit:hover, .btn-save:hover {
+    background-color: #555;
+  }
+  
+  
