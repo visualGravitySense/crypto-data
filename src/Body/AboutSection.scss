@@ -12,7 +12,10 @@ $accent-color: #fff;
 // Общие стили
 .about-section {
   padding: 3rem 0;
-  background-color: $background-light;
+  // background-color: $background-light;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  // font-family: Arial, sans-serif;
+
   color: $primary-color;
   font-family: 'Courier New', Courier, monospace;
   text-align: center;
@@ -57,13 +60,15 @@ $accent-color: #fff;
   }
   
   .about-info {
-    background-color: $accent-color;
+    // background-color: $accent-color;
     border: 3px solid $primary-color;
     box-shadow: 5px 5px 0 $primary-color;
     padding: 2rem;
     width: 80%;
     max-width: 800px;
     margin: 0 auto;
+    background: linear-gradient(135deg, #c2fafe 0%, #b7fff7 50%, #c2edff 100%);
+
   
     // Применение миксина для каждого свойства отдельно
     @include transition-effect(transform, 0.3s);
