@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import Favourites from './Favourites';
 import CheckOut from './CheckOut';
 import CheckOutForm from './CheckOutForm';
+import UserProfile from './UserProfile';
 import "./Favourites.scss";
 
 
@@ -33,18 +34,20 @@ const UserDetail = () => {
 
   return (
     <>
-    <div style={{ padding: '20px' }}>
+    {/* <div style={{ padding: '20px' }}>
       <h1>Profile of {user.name}</h1>
       <p><strong>Email:</strong> {user.email}</p>
       <p><strong>Bio:</strong> {user.bio}</p>
-    </div>
+    </div> */}
+
+    <UserProfile />
 
     <Favourites />
 
     {/* <CheckOut products={products} />
     <CheckOutForm /> */}
 
-    <div className="checkout-container">
+    <div className="checkout-container ">
       {/* Блок с таблицей продуктов */}
       <CheckOut products={products} />
 
