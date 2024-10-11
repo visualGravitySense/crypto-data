@@ -1,0 +1,151 @@
+.favourites-section {
+  padding: 2rem;
+  // background-color: #f0f0f0;
+  color: #000;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    border-bottom: 3px solid #000;
+    display: inline-block;
+  }
+
+  .favourite-courses {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .favourite-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; // Чтобы кнопка всегда была внизу
+    background: linear-gradient(
+      135deg,
+      #c2fafe38 0%,
+      #b7fff77d 50%,
+      #c2edff 100%
+    );
+
+    // background-color: #fff;
+    border: 3px solid #000;
+    padding: 1.5rem;
+    margin: 1rem;
+    box-shadow: 7px 7px 0 #000;
+    transition: transform 0.3s ease;
+    width: 300px;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 10px 10px 0 #000;
+    }
+
+    h3 {
+      font-size: 1.75rem;
+      text-transform: uppercase;
+      border-bottom: 2px solid #000;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .btn-checkout {
+    background-color: #0d6efd;
+    border: 2px solid #004ec3;
+    box-shadow: 5px 5px 0 #000;
+    transition: background-color 0.3s ease;
+
+    margin-top: 1rem;
+
+    &:hover {
+      background-color: #0052cd;
+      transform: scale(1.1);
+      transition: transform 0.3s ease;
+    }
+  }
+
+  .btn-remove {
+    background-color: #333;
+    color: #fff;
+    border: 2px solid #1e1e1e;
+    box-shadow: 5px 5px 0 #000;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+
+    margin-top: auto; // Это позволяет кнопке быть прижата к низу
+
+    &:hover {
+      background-color: #555;
+    }
+  }
+
+  // Dark mode styles
+  &.dark-mode {
+    background-color: #111;
+    color: #f0f0f0;
+
+    .favourite-card {
+      background-color: #222;
+      color: #f0f0f0;
+    }
+
+    .btn-remove,
+    .btn-checkout {
+      background-color: #0d6efd;
+      color: #f0f0f0;
+
+      &:hover {
+        background-color: #666;
+      }
+    }
+  }
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+
+  .tab-button {
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    // background-color: #ff00ff;  // Яркий контрастный цвет
+    background-color: #000;
+
+    color: #f7f5f5;
+    border: 5px solid #000; // Толстая черная рамка
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9rem; // Большие шрифты
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #000;
+      background-color: #0af3ef27; // Яркое изменение цвета на ховер
+      transform: translate(5px, 5px); // Легкое смещение при наведении
+      box-shadow: 8px 8px 0 #000; // Выразительная тень
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      width: 15px;
+      height: 15px;
+      background-color: #0af3ef;
+      box-shadow: 5px 5px 0 #555; // Контрастный тень-фигура
+    }
+
+    &.active-tab {
+      background-color: #0af3ef3b; // Черный фон для активного таба
+      color: #000; // Контрастный текст
+      border-color: #999; // Красная рамка
+      font-weight: bold;
+      box-shadow: 10px 10px 0 #000;
+    }
+  }
+}
