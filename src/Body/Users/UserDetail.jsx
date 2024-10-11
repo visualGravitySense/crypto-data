@@ -2,10 +2,21 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import Favourites from './Favourites';
+import CheckOut from './CheckOut';
+import CheckOutForm from './CheckOutForm';
+import "./Favourites.scss";
+
 
 const UserDetail = () => {
   // Получаем userId из параметров маршрута
   const { userId } = useParams();
+
+  // Пример данных для продуктов
+  const products = [
+    { name: 'Product 1', quantity: 2, price: 19.99 },
+    { name: 'Product 2', quantity: 1, price: 49.99 },
+    { name: 'Product 3', quantity: 3, price: 9.99 },
+  ];
 
   // Загрузка данных пользователя (в реальном приложении данные можно загрузить с сервера)
   const users = {
@@ -29,6 +40,17 @@ const UserDetail = () => {
     </div>
 
     <Favourites />
+
+    {/* <CheckOut products={products} />
+    <CheckOutForm /> */}
+
+    <div className="checkout-container">
+      {/* Блок с таблицей продуктов */}
+      <CheckOut products={products} />
+
+      {/* Блок с формой оформления заказа */}
+      <CheckOutForm />
+    </div>
 
     </>
   );
