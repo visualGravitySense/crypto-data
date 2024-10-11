@@ -27,14 +27,17 @@
 
 .highlighted-item {
   color: rgb(117, 119, 127);
-  background-color: #ddd1fb46;
-  border: 2px solid #b7c2d3a5; // Black border
-  padding: 1px 5px; // Spacing inside the border
+  background-color: #faf9fc;
+  border: 3px solid #eae7f0; // Black border
+  padding: 5px 10px; // Spacing inside the border
   border-radius: 50px; // Rounded corners
   display: inline-block; // Ensures the border fits tightly around the word
   margin-bottom: 0.5rem;
   margin-left: 0.5rem;
+  
 }
+
+
 
 
 .hero-section {
@@ -55,7 +58,7 @@
   .hero-content {
     flex: 2; // Занимает 2/3 ширины
     padding-right: 2rem; // Отступ справа для разделения контента
-    ta
+    
 
     h1 {
       font-size: 3rem;
@@ -87,6 +90,28 @@
       }
     }
 
+    .global-data {
+      display: flex;
+      justify-content: flex-start; /* Распределяет div-ы равномерно */
+      align-items: center; /* Вертикальное выравнивание */
+      
+    
+
+      p {
+        font-size: 0.75rem;
+        margin-right: 10px;
+      }
+
+    }
+    
+    .item {
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
     .new-block {
       margin-top: 2rem;
 
@@ -96,7 +121,7 @@
 
       .new-block-text {
         font-size: 1.15rem;
-        // color: lighten($primary-color, 20%);
+        
         margin-bottom: 1.5rem;
 
         

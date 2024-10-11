@@ -7,10 +7,10 @@
   justify-content: center;
   align-items: center;
   padding: 4rem;
-  text-align: center;
+  /* text-align: center; */
   background: #f0f0f0;
   color: #000;
-  background-image: url('/src/assets/hero-group.png'); 
+  background-image: url('/public/bg-1.png'); 
   background-size: cover;
   background-position: center;
 }
