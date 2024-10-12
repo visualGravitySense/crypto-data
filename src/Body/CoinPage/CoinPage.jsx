@@ -122,13 +122,14 @@ function CoinPage() {
     <>
       <Row>
         <Col md={4}>
+        <StyledButton className="w-100" onClick={handleOnClick}>Add to compare</StyledButton>
         <br></br>
           <CoinMetrics {...coinData} currency={selectedCurrency} />
 
 
           
 
-          <StyledButton className="w-100" onClick={handleOnClick}>Add to compare</StyledButton>
+          
           <br></br>
           <br></br>
 
