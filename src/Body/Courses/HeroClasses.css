@@ -15,6 +15,20 @@
   background-position: center;
 }
 
+.hero-classes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  /* text-align: center; */
+  background: #f0f0f0;
+  color: #000;
+  /* background-image: url('/public/bg-1.png');  */
+  background-size: cover;
+  background-position: center;
+}
+
 .hero-section h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
