@@ -1,0 +1,64 @@
+.course-filters {
+  background-color: #f0f0f0;
+  padding: 2rem;
+  border: 2px solid #000;
+  box-shadow: 5px 5px 0 #000;
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  overflow: hidden;
+}
+
+.course-filters.dark-mode {
+  background-color: #1c1c1c;
+  color: #fff;
+}
+
+.course-filters h3 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  text-align: center;
+  border-bottom: 2px solid #000;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.course-filters label {
+  display: block;
+  margin: 1rem 0 0.5rem;
+}
+
+.course-filters select {
+  border: 2px solid #000;
+  box-shadow: 3px 3px 0 #000;
+  padding: 0.5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  color: #333;
+}
+
+.course-filters .btn-apply-filters {
+  margin-top: 1rem;
+  background-color: #333;
+  color: #fff;
+  border: 2px solid #000;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.course-filters .btn-apply-filters:hover {
+  background-color: #555;
+  box-shadow: 3px 3px 0 #000;
+}
+
+.course-filters:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 2px dashed #000;
+  pointer-events: none;
+}
