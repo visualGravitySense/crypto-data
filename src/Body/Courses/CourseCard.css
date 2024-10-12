@@ -1,0 +1,30 @@
+.course-card {
+  /* margin: 1rem; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.course-image {
+  height: 150px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.course-description {
+  /* margin: 1rem 0; */
+}
+
+.course-price {
+  margin-bottom: 0.5rem;
+}
+
+.btn-course-details {
+  margin-right: 0.5rem;
+  /* margin-bottom: 0.5rem; */
+}
+
+.btn-add-to-cart {
+  background-color: #6c757d;
+  border: none;
+}
