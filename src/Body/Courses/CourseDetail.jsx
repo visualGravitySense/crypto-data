@@ -7,7 +7,7 @@ import HeroClasses from "./HeroClasses";
 // import PromoBanners from "./components/PromoBanners";
 // import AboutSection from "./components/AboutSection";
 // import StudentTestimonials from "../../components/StudentTestimonials";
-import "./Courses.css";
+
 
 
 const CourseDetail = ({ theme, toggleTheme }) => {

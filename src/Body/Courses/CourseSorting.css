@@ -1,0 +1,39 @@
+.course-sorting {
+    background-color: #f0f0f0;
+    padding: 1.5rem;
+    border: 2px solid #000;
+    box-shadow: 5px 5px 0 #000;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 2rem;
+  }
+  
+  .course-sorting.dark-mode {
+    background-color: #1c1c1c;
+    color: #fff;
+  }
+  
+  .course-sorting h3 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-align: center;
+    border-bottom: 2px solid #000;
+    margin-bottom: 1rem;
+    display: inline-block;
+  }
+  
+  .course-sorting select {
+    border: 2px solid #000;
+    box-shadow: 3px 3px 0 #000;
+    background-color: #fff;
+    color: #000;
+  }
+  
+  .course-sorting select.dark-mode {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .course-sorting label {
+    font-weight: bold;
+  }
+  

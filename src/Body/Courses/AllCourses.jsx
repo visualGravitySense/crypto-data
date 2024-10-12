@@ -76,7 +76,7 @@ const AllCourses = ({ theme }) => {
 
       {/* <CourseFilters />
       <CourseSorting /> */}
-
+      {/* <h1> </h1> */}
       <h2>All courses</h2>
       
       <div className="featured-courses">
