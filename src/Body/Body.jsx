@@ -13,6 +13,7 @@ import ComparePage from "./ComparePage";
 import CourseDetail from "../Body/Courses/CourseDetail";
 import PromoBanners from "./PromoBanners"; 
 import UserDetail from "../Body/Users/UserDetail"; 
+import Courses from "../Body/Courses/Courses"; 
 
 import BlogPost from "./BlogPost";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -32,6 +33,7 @@ function Body(props) {
         <Route path="/compare" element={<ComparePage />} />
         <Route path="/posts/:postId" element={<BlogPost  />} />{" "}
         <Route path="/courses/:id" element={<CourseDetail />} />
+        <Route path="/courses" element={<Courses />} />
         <Route path="/users/:userId" element={<UserDetail />} />
 
       </Routes>

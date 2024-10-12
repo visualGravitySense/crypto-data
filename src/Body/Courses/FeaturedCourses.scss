@@ -1,0 +1,131 @@
+.featured-courses {
+//   padding: 3rem 0;
+  background: #f0f0f0;
+  color: #000;
+  font-family: 'Courier New', Courier, monospace;
+  
+  display: flex;
+  flex-wrap: wrap; 
+  justify-content: center;
+
+  h2 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #333;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+      border-bottom: 2px solid #000;
+      padding-bottom: 1rem;
+      display: inline-block;
+      filter: drop-shadow(2px 2px 0 #666);
+  }
+}
+
+.course-card {
+//   background: #ffffff37;
+  border: 2px solid #000;
+  box-shadow: 5px 5px 0 #000;
+  border-radius: 0;
+//   padding: 1.5rem; 
+  margin: 1rem;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 300px;
+  overflow: hidden; // Чтобы скрыть любые вылезшие элементы
+
+  h3 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      border-bottom: 2px solid #333;
+      padding-bottom: 0.5rem;
+      position: relative; // Для эффектов с псевдоэлементами
+      &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          width: 100%;
+          height: 2px;
+          background: #999;
+          transform: skewY(-10deg); // Непривычный сдвиг
+      }
+  }
+
+  p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      filter: brightness(90%); // Темнее, чем обычно
+  }
+
+  .btn-learn-more {
+      background: #333;
+      border: 2px solid #000;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      box-shadow: 3px 3px 0 #000;
+
+      &:hover {
+          background: #555;
+          box-shadow: 5px 5px 0 #000;
+          color: #fff;
+          transform: rotate(-2deg); // Эффект наклона
+      }
+  }
+
+  &:hover {
+      transform: scale(1.05);
+      box-shadow: 8px 8px 0 #000;
+  }
+}
+
+// Стили для Dark Mode
+.dark-mode {
+  .featured-courses {
+      background: #1e1e1e;
+      color: #e0e0e0;
+
+      h2 {
+          color: #e4e4e4;
+          border-bottom: 2px solid #333;
+          padding: 1rem;
+          background-color: #474747;
+          filter: drop-shadow(2px 2px 0 #fff); // Яркий эффект тени
+      }
+  }
+
+  .course-card {
+      background: #333;
+      border: 2px solid #666;
+      box-shadow: 5px 5px 0 #666;
+
+      &:hover {
+          box-shadow: 8px 8px 0 #666;
+      }
+
+      h3 {
+          border-bottom: 2px solid #888;
+      }
+
+      p {
+          color: #ccc;
+      }
+
+      .btn-learn-more {
+          background: #666;
+          border: 2px solid #888;
+          color: #e0e0e0;
+          box-shadow: 3px 3px 0 #888;
+
+          &:hover {
+              background: #888;
+              box-shadow: 5px 5px 0 #888;
+          }
+      }
+  }
+}
