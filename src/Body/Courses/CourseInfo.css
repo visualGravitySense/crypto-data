@@ -1,8 +1,8 @@
 .course-info {
     padding: 3rem 0;
     font-family: 'Courier New', Courier, monospace;
-    background-color: #f0f0f0;
-    text-align: center;
+    /* background-color: #f0f0f0; */
+    text-align: left;
   }
   
   .course-info h2 {
@@ -22,14 +22,14 @@
   .course-info-list li {
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-    font-size: 1.2rem;
-    text-transform: uppercase;
+    justify-content: left;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    /* text-transform: uppercase; */
   }
   
   .course-info-list li .icon {
-    font-size: 2rem;
+    font-size: 1rem;
     margin-right: 1rem;
   }
   
