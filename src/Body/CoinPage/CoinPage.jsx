@@ -22,10 +22,10 @@ import styled from 'styled-components';
 
 // Стилизованная кнопка
 const StyledButton = styled.button`
-  width: 100%;
-  background-color: #FF5733;
+  width: 50%;
+  background-color: #ff0066;
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 0.9rem;
   font-family: 'Courier New', Courier, monospace;
   padding: 1rem 2rem;
   border: 3px solid #000;
@@ -124,9 +124,11 @@ function CoinPage() {
         <Col md={4}>
         <br></br>
           <CoinMetrics {...coinData} currency={selectedCurrency} />
+
+
           
 
-          {/* <StyledButton className="w-100" onClick={handleOnClick}>Add to compare</StyledButton> */}
+          <StyledButton className="w-100" onClick={handleOnClick}>Add to compare</StyledButton>
           <br></br>
           <br></br>
 
@@ -148,7 +150,7 @@ function CoinPage() {
           
 
           <CoinChart data={historicalData} />
-          <Col md={6}><StyledButton className="w-100" onClick={handleOnClick}>Add to compare</StyledButton></Col>
+          
 
           <br></br>
 

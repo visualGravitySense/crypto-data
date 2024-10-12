@@ -24,7 +24,7 @@ function Body(props) {
     <BodyProvider>
       
       <GlobalData />
-      Your History Log: <HistoryLog />
+      <HistoryLog />
       {/* <Converter /> */}
       <Routes>
         <Route path="/" element={<ListCoins {...props} />} />
