@@ -25,11 +25,11 @@ const StyledNavbar = styled(Navbar)`
   .navbar-brand {
     font-size: 2rem;
     font-weight: bold;
-    color: #000;
-    text-shadow: 3px 3px 0px #ff0066;
+    color: #fff000;
+    text-shadow: 3px 3px 0px #006;
     &:hover {
-      color: #000;
-      text-shadow: none;
+      color: #fff;
+      text-shadow: #ff0066;
     }
   }
 

@@ -18,10 +18,10 @@ const StyledButtonGroup = styled.div`
 `;
 
 const StyledButton = styled.button`
-  background-color: ${({ active }) => (active ? '#FF5733' : '#f0f0f0')};
+  background-color: ${({ active }) => (active ? '#333' : '#f0f0f0')};
   color: ${({ active }) => (active ? '#fff' : '#333')};
-  padding: 1rem 2rem;
-  font-size: 1.5rem;
+  padding: 0.5rem 0.5rem;
+  font-size: 1.1rem;
   font-family: 'Courier New', Courier, monospace;
   border: 3px solid #000;
   box-shadow: ${({ active }) => (active ? '10px 10px 0 #000' : '5px 5px 0 #333')};
@@ -47,7 +47,7 @@ const StyledButton = styled.button`
     left: 5px;
     width: 100%;
     height: 100%;
-    background-color: ${({ active }) => (active ? '#FFB900' : '#ccc')};
+    background-color: ${({ active }) => (active ? '#ff0066' : '#ccc')};
     z-index: -2;
   }
 
