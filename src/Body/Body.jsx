@@ -22,8 +22,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 function Body(props) {
   return (
     <BodyProvider>
-      <HistoryLog />
+      
       <GlobalData />
+      Your History Log: <HistoryLog />
       {/* <Converter /> */}
       <Routes>
         <Route path="/" element={<ListCoins {...props} />} />
