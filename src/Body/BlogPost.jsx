@@ -1,29 +1,28 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React from 'react';
+import PostComponent from './PostComponent';
 
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import "./BlogPost.css"; 
+const BlogPost = () => {
+  // Пример контента в формате Markdown
+  const markdownContent = `
+# Welcome to the Blog!
+Here you can see various posts written in **Markdown** format.
 
+## Features
+- Easy to write
+- Supports **bold**, *italic*, and more
+- Rendered as HTML in React
 
-function BlogPost() {
-  const { postId } = useParams(); 
-  const [postContent, setPostContent] = useState('');
-
-  useEffect(() => {
-    
-    import(`../posts/${postId}.md`)
-      .then((res) => fetch(res.default))
-      .then((response) => response.text())
-      .then((text) => setPostContent(text))
-      .catch((err) => console.error('Error loading post:', err));
-  }, [postId]);
+Enjoy reading!
+`;
 
   return (
-    <div className="blog-post">
-      {content ? <ReactMarkdown>{content}</ReactMarkdown> : <p>Loading...</p>}
+    <div className="blog-section">
+      <h2>All Blog Posts</h2>
+      {/* Передаем markdownContent как пропс в BlogPost */}
+      <PostComponent content={markdownContent} />
     </div>
   );
 };
+
 
 export default BlogPost;
