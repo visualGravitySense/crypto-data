@@ -18,9 +18,50 @@ import { useSelector, useDispatch } from "react-redux";
 import { setErrorMessage } from "../../services/store";
 import { BodyContext } from "../../providers/BodyProvider";
 import Button from "react-bootstrap/Button";
+import styled from 'styled-components';
 
+// Стилизованная кнопка
+const StyledButton = styled.button`
+  width: 100%;
+  background-color: #FF5733;
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 1rem 2rem;
+  border: 3px solid #000;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 7px 7px 0 #000;
 
+  &::before {
+    content: '✨';
+    position: absolute;
+    top: -15px;
+    left: -10px;
+    font-size: 2rem;
+  }
 
+  &::after {
+    content: '✨';
+    position: absolute;
+    bottom: -15px;
+    right: -10px;
+    font-size: 2rem;
+  }
+
+  &:hover {
+    background-color: #C70039;
+    transform: translate(-5px, -5px);
+    box-shadow: 12px 12px 0 #000;
+  }
+
+  &:active {
+    transform: translate(0, 0);
+    box-shadow: 7px 7px 0 #000;
+    background-color: #900C3F;
+  }
+`;
 
 function CoinPage() {
   const dispatch = useDispatch();
@@ -85,14 +126,11 @@ function CoinPage() {
           <CoinMetrics {...coinData} currency={selectedCurrency} />
           
 
-          <Button className="w-100" onClick={handleOnClick}>Add to compare</Button>
+          {/* <StyledButton className="w-100" onClick={handleOnClick}>Add to compare</StyledButton> */}
           <br></br>
           <br></br>
 
-          <ChartPeriods
-            selectedPeriod={selectedPeriod}
-            setSelectedPeriod={setSelectedPeriod}
-          />
+          
 
           
           <br></br>
@@ -101,13 +139,20 @@ function CoinPage() {
         <br></br>
           {/* <CoinPriceSection /> */}
           {/* <ChartModal /> */}
+
+          <ChartPeriods
+            selectedPeriod={selectedPeriod}
+            setSelectedPeriod={setSelectedPeriod}
+          />
           
           
 
           <CoinChart data={historicalData} />
+          <Col md={6}><StyledButton className="w-100" onClick={handleOnClick}>Add to compare</StyledButton></Col>
+
           <br></br>
 
-          
+
 
           {/* <Button onClick={handleShow} variant="primary">
             Zoom Chart
