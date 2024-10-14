@@ -33,7 +33,7 @@ function Body(props) {
         <Route path="/search/:q" element={<SearchResult />} />
         <Route path="/exchange" element={<ExchangeList />} />
         <Route path="/compare" element={<ComparePage />} />
-        {/* <Route path="/posts/:postId" element={<BlogPost content={markdownContent} />} />{" "} */}
+        <Route path="/posts/:postId" element={<BlogPost />} />{" "}
 
         <Route path="/courses/:id" element={<CourseDetail />} />
         <Route path="/courses" element={<Courses />} />
