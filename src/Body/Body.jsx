@@ -26,6 +26,10 @@ function Body(props) {
       <GlobalData />
       <HistoryLog />
       {/* <Converter /> */}
+
+      
+
+      
       <Routes>
         <Route path="/" element={<ListCoins {...props} />} />
 
@@ -33,6 +37,7 @@ function Body(props) {
         <Route path="/search/:q" element={<SearchResult />} />
         <Route path="/exchange" element={<ExchangeList />} />
         <Route path="/compare" element={<ComparePage />} />
+        
         <Route path="/posts/:postId" element={<BlogPost />} />{" "}
 
         <Route path="/courses/:id" element={<CourseDetail />} />
@@ -41,7 +46,10 @@ function Body(props) {
         
 
       </Routes>
+
       <PromoBanners />
+      
+      
       {/* <BlogPost fileName="blog-post-1" /> */}
       <ErrorModal />
     </BodyProvider>
