@@ -13,6 +13,7 @@ import ComparePage from "./ComparePage";
 import CourseDetail from "../Body/Courses/CourseDetail";
 import PromoBanners from "./PromoBanners"; 
 import UserDetail from "../Body/Users/UserDetail"; 
+import Dashboard from "../Body/Dashboards/Dashboard"; 
 import Courses from "../Body/Courses/Courses"; 
 
 import BlogPost from "./BlogPost";
@@ -43,6 +44,7 @@ function Body(props) {
         <Route path="/courses/:id" element={<CourseDetail />} />
         <Route path="/courses" element={<Courses />} />
         <Route path="/users/:userId" element={<UserDetail />} />
+        <Route path="/dashboards/:userId" element={<Dashboard />} />
         
 
       </Routes>

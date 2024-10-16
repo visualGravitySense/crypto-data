@@ -14,11 +14,11 @@ const PromoBanners = () => {
       description: 'The Role of NFTs in Digital Art and Beyond',
       
     },
-    {
-      id: 'uiux-design',
-      description: 'Enhancing User Experience: Key Guidelines for Effective Website Design',
+    // {
+    //   id: 'uiux-design',
+    //   description: 'Enhancing User Experience: Key Guidelines for Effective Website Design',
       
-    },
+    // },
     
     
   ]);
