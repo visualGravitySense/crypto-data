@@ -15,6 +15,7 @@ import PromoBanners from "./PromoBanners";
 import UserDetail from "../Body/Users/UserDetail"; 
 import Dashboard from "../Body/Dashboards/Dashboard"; 
 import Courses from "../Body/Courses/Courses"; 
+// import Converter from "./CoinPage/Converter"; 
 
 import BlogPost from "./BlogPost";
 import PostComponent from "./PostComponent";
