@@ -18,7 +18,7 @@ function ListCoins() {
   const [coinList, setCoinList] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [sortConfig, setSortConfig] = useState({ key: 'rank', direction: 'asc' }); // Состояние сортировки
-
+ 
   const selectedCurrency = useSelector((state) => state.selectedCurrency);
   const navigate = useNavigate();
 
