@@ -27,9 +27,9 @@ const StyledNavbar = styled(Navbar)`
     font-weight: bold;
     color: #fff000;
     text-shadow: 3px 3px 0px #006;
-    &:hover {
-      color: #fff;
-      text-shadow: #ff0066;
+    // &:hover {
+    //   color: #fff;
+    //   text-shadow: #ff0066;
     }
   }
 
@@ -47,6 +47,17 @@ const StyledNavbar = styled(Navbar)`
       // text-shadow: none;
       text-shadow: 2px 2px 0px #ff0066;
     }
+  }
+
+  .nav-link-brand {
+    color: #000;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin: 0 1rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px #ff0066;
+    transition: transform 0.3s ease;
+   
   }
 
   .navbar-toggler {
@@ -113,9 +124,9 @@ function Navigation() {
   return (
     <StyledNavbar expand="lg">
       <Container fluid>
-      <Link to="/" className="nav-link">
+      <div className="nav-link-brand">
         <Navbar.Brand>Bison Wise</Navbar.Brand>
-      </Link>
+      </div>
         
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
