@@ -87,3 +87,69 @@
     }
   }
   
+
+  .top-gainers-losers {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    // background-color: #1e1e1e; // Фон контейнера
+    border-radius: 10px;
+    color: #fff; // Цвет текста
+    font-family: 'Roboto', sans-serif;
+  
+    .gainers, .losers {
+      width: 45%;
+      background-color: #2a2a2a; // Фон для каждого блока
+      padding: 15px;
+      border-radius: 10px;
+  
+      h3 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+        color: #00ff00; // Цвет заголовка для каждого блока
+      }
+  
+      ul {
+        list-style-type: none;
+        padding: 0;
+  
+        li {
+          display: flex;
+          justify-content: space-between;
+          padding: 8px 0;
+          font-size: 0.9rem;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  
+          &:last-child {
+            border-bottom: none; // Убираем нижнюю границу у последнего элемента
+          }
+  
+          span {
+            font-weight: bold;
+          }
+  
+          &:hover {
+            background-color: #333; // Эффект при наведении на строку
+          }
+        }
+      }
+    }
+  
+    .losers h3 {
+      color: #ff4c4c; // Цвет заголовка для блока Losers
+    }
+  
+    @media (max-width: 768px) {
+      flex-direction: column;
+  
+      .gainers, .losers {
+        width: 100%;
+        margin-bottom: 20px;
+  
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  

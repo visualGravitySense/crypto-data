@@ -19,6 +19,7 @@ import { setErrorMessage } from "../../services/store";
 import { BodyContext } from "../../providers/BodyProvider";
 import Button from "react-bootstrap/Button";
 import styled from 'styled-components';
+import TopPlayers from "./TopPlayers";
 
 // Стилизованная кнопка
 const StyledButton = styled.button`
@@ -122,6 +123,7 @@ function CoinPage() {
     <>
       <Row>
         <Col md={4}>
+        
         <StyledButton className="w-100" onClick={handleOnClick}>Add to compare</StyledButton>
         <br></br>
           <CoinMetrics {...coinData} currency={selectedCurrency} />
@@ -131,6 +133,7 @@ function CoinPage() {
 
           
           <br></br>
+          <TopPlayers />
           <br></br>
 
           
