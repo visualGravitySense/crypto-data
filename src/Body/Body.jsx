@@ -17,6 +17,11 @@ import Dashboard from "../Body/Dashboards/Dashboard";
 import Courses from "../Body/Courses/Courses"; 
 // import Converter from "./CoinPage/Converter"; 
 
+import NewCoins from "../Body/TopPerformers/NewCoins"; 
+import GlobalStats from "../Body/TopPerformers/GlobalStats"; 
+import TopPerformesrs from "../Body/TopPerformers/TopPerformers"; 
+import TopExchanges from "../Body/TopPerformers/TopExchanges"; 
+
 import BlogPost from "./BlogPost";
 import PostComponent from "./PostComponent";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -29,7 +34,10 @@ function Body(props) {
       <HistoryLog />
       {/* <Converter /> */}
 
-      
+      <NewCoins />
+      <TopExchanges />
+      <TopPerformesrs />
+      <GlobalStats />
 
       
       <Routes>
