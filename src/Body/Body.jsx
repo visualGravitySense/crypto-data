@@ -22,6 +22,13 @@ import GlobalStats from "../Body/TopPerformers/GlobalStats";
 import TopPerformesrs from "../Body/TopPerformers/TopPerformers"; 
 import TopExchanges from "../Body/TopPerformers/TopExchanges"; 
 
+import PriceAlerts from "../Body/PriceAlerts/PriceAlerts"; 
+import NewsFeed from "../Body/PriceAlerts/NewsFeed"; 
+import TrendingCoins from "../Body/PriceAlerts/TrendingCoins"; 
+import MarketDominanceChart from "../Body/PriceAlerts/MarketDominanceChart"; 
+import HistoricalChart from "../Body/PriceAlerts/HistoricalChart"; 
+
+
 import BlogPost from "./BlogPost";
 import PostComponent from "./PostComponent";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
@@ -33,6 +40,12 @@ function Body(props) {
       <GlobalData />
       <HistoryLog />
       {/* <Converter /> */}
+
+      <PriceAlerts />
+      <NewsFeed />
+      <TrendingCoins />
+      {/* <MarketDominanceChart /> */}
+      {/* <HistoricalChart /> */}
 
       <NewCoins />
       <TopExchanges />
