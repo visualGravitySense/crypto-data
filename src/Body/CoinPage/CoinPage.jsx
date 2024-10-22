@@ -21,6 +21,7 @@ import Button from "react-bootstrap/Button";
 import styled from 'styled-components';
 import TopPlayers from "./TopPlayers";
 import TopByCap from "./TopByCap";
+import TopBy24 from "./TopBy24";
 
 // Стилизованная кнопка
 const StyledButton = styled.button`
@@ -129,37 +130,26 @@ function CoinPage() {
         <br></br>
           <CoinMetrics {...coinData} currency={selectedCurrency} />
 
-
-          
-
+          <br></br>
           
           <br></br>
-          <TopPlayers />
-          <br></br>
 
-          
-
-          
           <br></br>
         </Col>
         <Col md={8}>
         <br></br>
           {/* <CoinPriceSection /> */}
           {/* <ChartModal /> */}
-
           <ChartPeriods
             selectedPeriod={selectedPeriod}
             setSelectedPeriod={setSelectedPeriod}
           />
           
-          
-
           <CoinChart data={historicalData} />
           
-
           <br></br>
-
-          <TopByCap />
+          
+          
 
 
 
@@ -168,6 +158,27 @@ function CoinPage() {
           </Button> */}
         </Col>
       </Row>
+
+      <Row>
+      <div className="crypto-container">
+        <div className="top-gainers-losers">
+        
+        <TopPlayers />
+        </div>
+
+        <div className="top-cryptos">
+        
+        <TopByCap />
+        </div>
+
+        <div className="top-cryptos-volume">
+        
+        <TopBy24 />
+        </div>
+
+        </div>
+
+        </Row>
 
       <ChildModal show={childModalShow} handleClose={handleClose}>
         <ChartPeriods

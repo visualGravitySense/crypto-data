@@ -87,107 +87,204 @@
     }
   }
   
+// Общие стили для блоков
+.top-gainers-losers, 
+.top-cryptos, 
+.top-cryptos-volume {
+  background: #1e1e1e;  // Темный фон
+  padding: 20px;
+  border-radius: 10px;
+  font-family: 'Courier New', Courier, monospace; // Используем моноширинный шрифт для "технического" эффекта
+  color: #fff;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.123), -5px -5px 15px rgba(255, 0, 255, 0.096); // Яркие тени
+  margin-bottom: 30px;
+  position: relative;
 
-  .top-gainers-losers {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
-    // background-color: #1e1e1e; // Фон контейнера
-    border-radius: 10px;
-    color: #fff; // Цвет текста
-    font-family: 'Roboto', sans-serif;
-  
-    .gainers, .losers {
-      width: 45%;
-      background-color: #2a2a2a; // Фон для каждого блока
-      padding: 15px;
-      border-radius: 10px;
-  
-      h3 {
-        font-size: 1.2rem;
-        margin-bottom: 10px;
-        color: #00ff00; // Цвет заголовка для каждого блока
-      }
-  
-      ul {
-        list-style-type: none;
-        padding: 0;
-  
-        li {
-          display: flex;
-          justify-content: space-between;
-          padding: 8px 0;
-          font-size: 0.9rem;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  
-          &:last-child {
-            border-bottom: none; // Убираем нижнюю границу у последнего элемента
-          }
-  
-          span {
-            font-weight: bold;
-          }
-  
-          &:hover {
-            background-color: #333; // Эффект при наведении на строку
-          }
-        }
-      }
+  &:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(45deg, #ff00ff27, #00ffff28);
+    z-index: -1;
+    filter: blur(10px);
+    transform: skewX(3deg) skewY(-2deg); // Легкое искажение
+  }
+
+  h3 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px #ff0077;
+    color: #00ff00; // Неоново-зеленый цвет
+    margin-bottom: 15px;
+    position: relative;
+
+    &:before {
+      content: ">>>";
+      position: absolute;
+      left: -40px;
+      top: 0;
+      color: #ff00ff;
+      font-size: 1.5rem;
+      opacity: 0.7;
+      transform: rotate(-5deg); // Небольшое смещение
     }
-  
-    .losers h3 {
-      color: #ff4c4c; // Цвет заголовка для блока Losers
-    }
-  
-    @media (max-width: 768px) {
-      flex-direction: column;
-  
-      .gainers, .losers {
-        width: 100%;
-        margin-bottom: 20px;
-  
-        &:last-child {
-          margin-bottom: 0;
+  }
+
+  ul, table {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #333;
+    border: 2px dashed #00ff00; // Декоративная "дешевая" граница
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 0, 0.8); // Желтые тени
+
+    li, tr {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      color: #00ffff;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 1rem;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:hover {
+        background-color: rgba(255, 0, 255, 0.2);
+        transform: scale(1.05) rotate(-1deg);
+        transition: 0.3s;
+      }
+
+      span {
+        &:nth-child(2) {
+          font-weight: bold;
+          color: #ff00ff;
+          text-shadow: 1px 1px #00ffff;
         }
       }
     }
   }
-  
+}
 
-  .top-cryptos {
-    background-color: #2a2a2a;
-    color: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    max-width: 400px;
-    margin: 20px auto;
-    font-family: 'Roboto', sans-serif;
+// Декоративные эффекты для списков
+// .top-gainers-losers ul li, 
+// .top-cryptos ul li, 
+// .top-cryptos-volume ul li {
+//   font-family: 'Lucida Console', Monaco, monospace;
+//   font-size: 1.1rem;
+//   color: #fff;
+//   background: linear-gradient(45deg, rgba(255, 0, 255, 0.2), rgba(0, 255, 255, 0.2));
+//   padding: 10px;
+//   margin: 5px 0;
+//   border-radius: 5px;
+//   box-shadow: 2px 2px 8px rgba(255, 255, 0, 0.8);
+//   transition: all 0.3s ease-in-out;
+
+//   &:hover {
+//     background: #ff00ff;
+//     color: #00ff00;
+//     transform: translateY(-5px) skewX(5deg);
+//     border-radius: 0;
+//     box-shadow: 0px 0px 15px #00ff00, -5px -5px 10px rgba(255, 255, 255, 0.3);
+//   }
+// }
+
+// // Кнопки (если применяются)
+// .button {
+//   background-color: #ff00ff;
+//   color: #fff;
+//   border: none;
+//   padding: 10px 20px;
+//   text-transform: uppercase;
+//   font-weight: bold;
+//   letter-spacing: 2px;
+//   box-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
+//   transition: background 0.3s;
+
+//   &:hover {
+//     background-color: #00ff00;
+//     color: #1e1e1e;
+//     box-shadow: 0 0 15px #ff00ff, 0px 0px 15px #00ffff;
+//     transform: skewX(3deg);
+//   }
+// }
+
+
+.crypto-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.top-gainers-losers, 
+.top-cryptos, 
+.top-cryptos-volume {
+  background: #f5f5f5;
+  padding: 20px;
+  width: 300px;
+  border-radius: 1px;
+  color: #000000;
+  border: 2px solid #b9b9b9;
+  // box-shadow: 0 0 10px rgba(0, 255, 255, 0.041), 5px 5px 15px rgba(255, 0, 255, 0.4);
+  font-family: 'Courier New', Courier, monospace;
   
-    h3 {
+  h3 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #020202;
+    position: relative;
+
+    &:before {
+      content: ">>>";
+      position: absolute;
+      left: -40px;
+      top: 0;
+      color: #525252;
       font-size: 1.2rem;
-      margin-bottom: 10px;
-      text-align: center;
-      color: #00ff00;
+      opacity: 0.5;
+      transform: rotate(-10deg);
     }
-  
-    ul {
-      list-style: none;
-      padding: 0;
-  
-      li {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  
-        &:last-child {
-          border-bottom: none;
-        }
-  
-        span {
-          font-size: 0.9rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: #ffffff80;
+    border: 2px dashed #ff00772c;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(255, 0, 166, 0.075);
+
+    li {
+      display: grid;
+      color:#000;
+      justify-content: space-between;
+      padding: 10px;
+      margin: 5px 0;
+      background: linear-gradient(135deg, rgba(0, 153, 255, 0.1), rgba(0, 255, 255, 0.2));
+      border-radius: 2px;
+      // box-shadow: 2px 2px 8px rgba(134, 134, 134, 0.5);
+      
+      &:hover {
+        background-color: rgba(0, 255, 255, 0.1);
+        transform: scale(1.05) rotate(-2deg);
+        transition: 0.3s;
+      }
+
+      span {
+        &:nth-child(2) {
+          font-weight: bold;
+          color: #101111;
         }
       }
     }
   }
-  
+}
+
