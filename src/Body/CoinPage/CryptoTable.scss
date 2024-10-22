@@ -153,3 +153,41 @@
     }
   }
   
+
+  .top-cryptos {
+    background-color: #2a2a2a;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 20px auto;
+    font-family: 'Roboto', sans-serif;
+  
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      text-align: center;
+      color: #00ff00;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+  
+      li {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  
+        &:last-child {
+          border-bottom: none;
+        }
+  
+        span {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+  

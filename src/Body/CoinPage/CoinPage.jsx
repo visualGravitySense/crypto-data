@@ -20,6 +20,7 @@ import { BodyContext } from "../../providers/BodyProvider";
 import Button from "react-bootstrap/Button";
 import styled from 'styled-components';
 import TopPlayers from "./TopPlayers";
+import TopByCap from "./TopByCap";
 
 // Стилизованная кнопка
 const StyledButton = styled.button`
@@ -158,6 +159,8 @@ function CoinPage() {
 
           <br></br>
 
+          <TopByCap />
+
 
 
           {/* <Button onClick={handleShow} variant="primary">
@@ -173,6 +176,7 @@ function CoinPage() {
         />
         <CoinChart data={historicalData} />
       </ChildModal>
+
     </>
   );
 }
