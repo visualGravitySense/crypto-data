@@ -1,0 +1,41 @@
+.global-stats, 
+.top-performers, 
+.top-exchanges, 
+.new-coins {
+  background: #f0f8ff;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  border: 2px solid #ff00ff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6), 5px 5px 20px rgba(255, 0, 255, 0.5);
+  color: #333;
+  font-family: 'Courier New', Courier, monospace;
+
+  h3 {
+    text-align: center;
+    color: #00ccff;
+    margin-bottom: 15px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    
+    li {
+      margin: 10px 0;
+      padding: 10px;
+      background: linear-gradient(135deg, rgba(255, 255, 0, 0.2), rgba(0, 255, 255, 0.2));
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+      display: flex;
+      justify-content: space-between;
+      
+      &:hover {
+        background: rgba(0, 255, 255, 0.1);
+        transform: scale(1.05) rotate(-2deg);
+        transition: 0.3s;
+      }
+    }
+  }
+}
