@@ -13,6 +13,10 @@ import Col from "react-bootstrap/Col";
 import AboutSection from "./AboutSection";
 import Converter from "./CoinPage/Converter";
 
+
+
+
+
 function ListCoins() {
   const dispatch = useDispatch();  
   const [coinList, setCoinList] = useState([]);
@@ -84,6 +88,8 @@ function ListCoins() {
       <Row>
         <Col md={4}>
           <AboutSection />
+          
+           {/* <TopPerformers /> */}
         </Col>
 
         <Col md={8}>
