@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import './CryptoTable.scss';
+// import '../PriceAlerts/PriceAlerts.scss';
 
 const TopPlayers = () => {
   const [gainers, setGainers] = useState([]);

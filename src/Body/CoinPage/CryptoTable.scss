@@ -15,7 +15,7 @@
   
     td {
       padding: 1rem;
-      font-size: 1.2rem;
+      font-size: 0.8rem;
       text-align: left;
       transition: background-color 0.3s ease;
     }
@@ -88,88 +88,88 @@
   // }
   
 // Общие стили для блоков
-.top-gainers-losers, 
-.top-cryptos, 
-.top-cryptos-volume {
-  background: #1e1e1e;  // Темный фон
-  padding: 20px;
-  border-radius: 10px;
-  font-family: 'Courier New', Courier, monospace; // Используем моноширинный шрифт для "технического" эффекта
-  color: #fff;
-  // box-shadow: 0 0 20px rgba(0, 255, 255, 0.123), -5px -5px 15px rgba(255, 0, 255, 0.096); // Яркие тени
-  margin-bottom: 30px;
-  position: relative;
+// .top-gainers-losers, 
+// .top-cryptos, 
+// .top-cryptos-volume {
+//   background: #1e1e1e;  // Темный фон
+//   padding: 20px;
+//   border-radius: 10px;
+//   font-family: 'Courier New', Courier, monospace; // Используем моноширинный шрифт для "технического" эффекта
+//   color: #fff;
+//   // box-shadow: 0 0 20px rgba(0, 255, 255, 0.123), -5px -5px 15px rgba(255, 0, 255, 0.096); // Яркие тени
+//   margin-bottom: 30px;
+//   position: relative;
 
-  &:before {
-    content: "";
-    position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    background: linear-gradient(45deg, #ff00ff27, #00ffff28);
-    z-index: -1;
-    filter: blur(10px);
-    transform: skewX(3deg) skewY(-2deg); // Легкое искажение
-  }
+//   &:before {
+//     content: "";
+//     position: absolute;
+//     top: -5px;
+//     left: -5px;
+//     right: -5px;
+//     bottom: -5px;
+//     background: linear-gradient(45deg, #ff00ff27, #00ffff28);
+//     z-index: -1;
+//     filter: blur(10px);
+//     transform: skewX(3deg) skewY(-2deg); // Легкое искажение
+//   }
 
-  h3 {
-    font-size: 2rem;
-    text-transform: uppercase;
-    text-shadow: 2px 2px #ff0077;
-    color: #00ff00; // Неоново-зеленый цвет
-    margin-bottom: 15px;
-    position: relative;
+//   h3 {
+//     font-size: 2rem;
+//     text-transform: uppercase;
+//     text-shadow: 2px 2px #ff0077;
+//     color: #00ff00; // Неоново-зеленый цвет
+//     margin-bottom: 15px;
+//     position: relative;
 
-    &:before {
-      content: ">>>";
-      position: absolute;
-      left: -40px;
-      top: 0;
-      color: #ff00ff;
-      font-size: 1.5rem;
-      opacity: 0.7;
-      transform: rotate(-5deg); // Небольшое смещение
-    }
-  }
+//     &:before {
+//       content: ">>>";
+//       position: absolute;
+//       left: -40px;
+//       top: 0;
+//       color: #ff00ff;
+//       font-size: 1.5rem;
+//       opacity: 0.7;
+//       transform: rotate(-5deg); // Небольшое смещение
+//     }
+//   }
 
-  ul, table {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    background: #333;
-    border: 2px dashed #00ff00; // Декоративная "дешевая" граница
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 0, 0.8); // Желтые тени
+//   ul, table {
+//     list-style: none;
+//     padding: 0;
+//     margin: 0;
+//     background: #333;
+//     border: 2px dashed #00ff00; // Декоративная "дешевая" граница
+//     padding: 10px;
+//     box-shadow: 0 0 10px rgba(255, 255, 0, 0.8); // Желтые тени
 
-    li, tr {
-      display: flex;
-      justify-content: space-between;
-      padding: 8px 0;
-      color: #00ffff;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      font-size: 1rem;
+//     li, tr {
+//       display: flex;
+//       justify-content: space-between;
+//       padding: 8px 0;
+//       color: #00ffff;
+//       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+//       font-size: 1rem;
 
-      &:last-child {
-        border-bottom: none;
-      }
+//       &:last-child {
+//         border-bottom: none;
+//       }
 
-      &:hover {
-        background-color: rgba(255, 0, 255, 0.2);
-        transform: scale(1.05) rotate(-1deg);
-        transition: 0.3s;
-      }
+//       &:hover {
+//         background-color: rgba(255, 0, 255, 0.2);
+//         transform: scale(1.05) rotate(-1deg);
+//         transition: 0.3s;
+//       }
 
-      span {
-        &:nth-child(2) {
-          font-weight: bold;
-          color: #ff00ff;
-          text-shadow: 1px 1px #00ffff;
-        }
-      }
-    }
-  }
-}
+//       span {
+//         &:nth-child(2) {
+//           font-weight: bold;
+//           color: #ff00ff;
+//           text-shadow: 1px 1px #00ffff;
+//         }
+//       }
+//     }
+//   }
+// }
 
 // Декоративные эффекты для списков
 // .top-gainers-losers ul li, 
@@ -219,7 +219,7 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 1px;
 }
 
 .top-gainers-losers, 
@@ -227,7 +227,7 @@
 .top-cryptos-volume {
   background: #f5f5f5;
   padding: 20px;
-  width: 300px;
+  width: 400px;
   border-radius: 1px;
   color: #000000;
   border: 2px solid #b9b9b9;
