@@ -24,20 +24,20 @@
   }
   
   .promo-card:hover {
-    transform: scale(1.05);
-    box-shadow: 8px 8px 0 #000;
+    /* transform: scale(1.05); */
+    box-shadow: 8px 8px 0 #ff008c;
   }
   
   .promo-card h3 {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     margin-bottom: 1rem;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     border-bottom: 2px solid #333;
     padding-bottom: 0.5rem;
   }
   
   .promo-card p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-bottom: 1.5rem;
   }
   
@@ -57,7 +57,7 @@
   .promo-btn:hover {
     background-color: #555;
     color: #fff;
-    box-shadow: 5px 5px 0 #000;
+    box-shadow: 5px 5px 0 #006eff;
   }
   
   /* Dark Mode */

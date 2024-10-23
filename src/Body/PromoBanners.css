@@ -28,14 +28,14 @@
   }
   
   .promo-card:hover {
-    transform: scale(1.05);
-    box-shadow: 8px 8px 0 #000;
+    /* transform: scale(1.05); */
+    box-shadow: 8px 8px 0 #0059ff;
   }
   
   .promo-card h3 {
     font-size: 1.75rem;
     margin-bottom: 1rem;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     border-bottom: 2px solid #333;
     padding-bottom: 0.5rem;
   }
@@ -52,7 +52,7 @@
     border: 2px solid #000;
     padding: 0.5rem 1rem;
     font-size: 0.9rem;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     letter-spacing: 1px;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;

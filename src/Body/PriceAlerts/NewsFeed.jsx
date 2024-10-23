@@ -7,7 +7,7 @@ const NewsFeed = () => {
     fetch('https://min-api.cryptocompare.com/data/v2/news/?lang=EN') // Используй API для новостей
       .then(response => response.json())
       .then(data => {
-        setNews(data.Data.slice(0, 5)); // Ограничиваем количество новостей
+        setNews(data.Data.slice(0, 4)); // Ограничиваем количество новостей
       });
   }, []);
 
