@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import './PriceAlerts.scss';
+
 const PriceAlerts = () => {
   const [alerts, setAlerts] = useState([]);
   const [coin, setCoin] = useState('');
@@ -28,31 +30,33 @@ const PriceAlerts = () => {
   }, [alerts]);
 
   return (
-    <div className="price-alerts">
-      <h3>Set Price Alerts</h3>
-      <input 
-        type="text" 
-        value={coin} 
-        onChange={(e) => setCoin(e.target.value)} 
-        placeholder="Enter coin symbol (e.g. BTC)" 
+    <div className="price-alerts anti-design">
+    <h3 className="anti-title">Set Price Alerts</h3>
+    <div className="input-group">
+      <input
+        type="text"
+        value={coin}
+        onChange={(e) => setCoin(e.target.value)}
+        placeholder="Enter coin symbol (e.g. BTC)"
       />
-      <input 
-        type="number" 
-        value={targetPrice} 
-        onChange={(e) => setTargetPrice(e.target.value)} 
-        placeholder="Enter target price" 
+      <input
+        type="number"
+        value={targetPrice}
+        onChange={(e) => setTargetPrice(e.target.value)}
+        placeholder="Enter target price"
       />
-      <button onClick={handleAddAlert}>Add Alert</button>
-      
-      <h4>Active Alerts:</h4>
-      <ul>
-        {alerts.map((alert, index) => (
-          <li key={index}>
-            {alert.coin}: Target Price ${alert.targetPrice}
-          </li>
-        ))}
-      </ul>
     </div>
+    <button className="add-alert-button" onClick={handleAddAlert}>Add Alert</button>
+    
+    <h4 className="active-alerts-title">Active Alerts:</h4>
+    <ul className="alerts-list">
+      {alerts.map((alert, index) => (
+        <li className="alert-item" key={index}>
+          <span>{alert.coin}</span>: Target Price <span>${alert.targetPrice}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
   );
 };
 

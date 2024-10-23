@@ -33,6 +33,8 @@ import BlogPost from "./BlogPost";
 import PostComponent from "./PostComponent";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import './Body.scss';
+
 function Body(props) {
   return (
     <BodyProvider>
