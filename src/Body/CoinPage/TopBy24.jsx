@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './CryptoTable.scss';
+// import '../PriceAlerts/PriceAlerts.scss';
 
 function TopBy24() {
     const [topVolumeCoins, setTopVolumeCoins] = React.useState([]);
