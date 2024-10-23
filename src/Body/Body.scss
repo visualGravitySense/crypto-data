@@ -4,3 +4,22 @@ body {
     color: #000;
     // padding: 20px;
   }
+
+  .components-container {
+    display: flex; // Aligns the components in a row
+    justify-content: space-between; // Adds space between the two components
+    gap: 20px; // Adds some space between the components
+    padding: 20px;
+  
+    // Ensure each component takes equal space
+    > div {
+      flex: 1;
+      max-width: 50%;
+    }
+  
+    @media (max-width: 768px) {
+      flex-direction: column; // For small screens, stack the components vertically
+    }
+  }
+  
+  
