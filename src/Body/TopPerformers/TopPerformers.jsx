@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './TopPerformers.scss';
+// import './TopPerformers.scss';
+// import './PriceAlerts.scss';
+import '../PriceAlerts/TrendingCoins.scss';
 
 const TopPerformers = () => {
   const [performers, setPerformers] = useState([]);
@@ -20,11 +22,11 @@ const TopPerformers = () => {
   }, []);
   
   return (
-    <div className="top-performers">
+    <div className="top-performers anti-design">
       <h3>Top Performers</h3>
       <div className="performance-category">
         <h4>1 Hour</h4>
-        <ul>
+        <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
           {performers.oneHour && performers.oneHour.map((coin) => (
             <li key={coin.id}>{coin.name}: {coin.quotes.USD.percent_change_1h}%</li>
           ))}
@@ -32,7 +34,7 @@ const TopPerformers = () => {
       </div>
       <div className="performance-category">
         <h4>24 Hours</h4>
-        <ul>
+        <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
           {performers.oneDay && performers.oneDay.map((coin) => (
             <li key={coin.id}>{coin.name}: {coin.quotes.USD.percent_change_24h}%</li>
           ))}
@@ -40,7 +42,7 @@ const TopPerformers = () => {
       </div>
       <div className="performance-category">
         <h4>7 Days</h4>
-        <ul>
+        <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
           {performers.oneWeek && performers.oneWeek.map((coin) => (
             <li key={coin.id}>{coin.name}: {coin.quotes.USD.percent_change_7d}%</li>
           ))}

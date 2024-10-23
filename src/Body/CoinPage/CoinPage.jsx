@@ -23,6 +23,7 @@ import TopPlayers from "./TopPlayers";
 import TopByCap from "./TopByCap";
 import TopBy24 from "./TopBy24";
 
+
 // Стилизованная кнопка
 const StyledButton = styled.button`
   width: 50%;
