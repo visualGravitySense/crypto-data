@@ -1,45 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import './PromoBanners.css';
 import { Link } from "react-router-dom";
-
-// const posts = [
-//   { id: "uiux-ruin-product", description: "UI/UX Design Can Actually Ruin a Product" },
-//   { id: "uiux-design", description: "Enhancing User Experience: Key Guidelines for Effective Website Design" },
-// ];
-
+ 
+ 
 const PromoBanners = () => {
-  const [posts] = useState([
-    {
-      id: 'uiux-ruin-product',
-      description: 'The Role of NFTs in Digital Art and Beyond',
-      
-    },
-    // {
-    //   id: 'uiux-design',
-    //   description: 'Enhancing User Experience: Key Guidelines for Effective Website Design',
-      
-    // },
-    
-    
-  ]);
+  const [news, setNews] = useState([]);
+
+  useEffect(() => {
+    fetch('https://min-api.cryptocompare.com/data/v2/news/?lang=EN') // Используй API для новостей
+      .then(response => response.json())
+      .then(data => {
+        setNews(data.Data.slice(0, 4)); // Ограничиваем количество новостей
+      });
+  }, []);
+
+  const truncateText = (text, maxLength) => {
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + '...';
+    }
+    return text;
+  };
 
   return (
+    <>
+    {/* <h2>Crypto News</h2> */}
     <section className="promo-banners">
-      <h2>Community Blog</h2>
+      <h2>Crypto News</h2>
       <div className="promo-container">
-        {posts.map((post) => (
+        {news.map((post) => (
           <div key={post.id} className="promo-card">
-            <h3>{post.id}</h3>
-            <p>{post.description}</p>
-            <Link to={`/posts/${post.id}`}>
-              <a href={post.link} className="post-btn">
+            <h3>{post.title}</h3>
+            {/* <p>{post.body}</p> */}
+            <p>{truncateText(post.body, 100)}</p> {/* Limit text to 100 characters */}
+            {/* <Link key={post.url}> */}
+              <a href={post.url} className="post-btn" target="_blank">
                 Read
               </a>
-            </Link>
+            {/* </Link> */}
           </div>
         ))}
       </div>
     </section>
+    </>
+    
   );
 };
 

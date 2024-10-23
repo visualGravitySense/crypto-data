@@ -69,6 +69,7 @@ function Body(props) {
         <TrendingCoins />
       </div>
 
+      {/* <h2>Crypto News</h2>  */}
       <div className="components-container">
         <NewCoins />
         <TopExchanges />
@@ -81,7 +82,8 @@ function Body(props) {
         <TopExchangesAll />
       </div>
 
-      <NewsFeed />
+      {/* <NewsFeed /> */}
+      
       <PromoBanners />
 
       {/* <BlogPost fileName="blog-post-1" /> */}
