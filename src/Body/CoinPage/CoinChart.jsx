@@ -6,10 +6,10 @@ function CoinChart({ data }) {
   const [errorMessage, setErrorMessage] = React.useState(null);
   return (
     <>
-    <ResponsiveContainer width="100%" height={400}>
+    <ResponsiveContainer width="100%" height={500}>
       <AreaChart
         width={800}
-        height={400}
+        height={500}
         data={data}
         margin={{
           top: 4,
@@ -25,12 +25,12 @@ function CoinChart({ data }) {
         <XAxis 
           dataKey="timestamp" 
           stroke="#ff4500" 
-          tick={{ fontSize: 18, fontWeight: '700', fill: '#000', fontFamily: 'Courier New' }} 
+          tick={{ fontSize: 14, fontWeight: '100', fill: '#000', fontFamily: 'Courier New' }} 
         />
         <YAxis 
           dataKey="price" 
           stroke="#ff4500" 
-          tick={{ fontSize: 18, fontWeight: '700', fill: '#000', fontFamily: 'Courier New' }} 
+          tick={{ fontSize: 18, fontWeight: '100', fill: '#000', fontFamily: 'Courier New' }} 
         />
         
         {/* Настройки области графика с яркими цветами */}
@@ -45,7 +45,7 @@ function CoinChart({ data }) {
           fillOpacity={0.8} 
           fill="url(#colorUv)" 
           strokeWidth={4}
-          // dot={{ fill: '#ff1493', stroke: '#000', strokeWidth: 2, r: 6 }} // Крупные точки на графике
+          dot={{ fill: '#ff1493', stroke: '#000', strokeWidth: 2, r: 4 }} // Крупные точки на графике
         />
         <defs>
           <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">

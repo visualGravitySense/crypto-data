@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import './PriceAlerts.scss';
+import '../CoinPage/CryptoTable.scss';
 
 const PriceAlerts = () => {
   const [alerts, setAlerts] = useState([]);
@@ -30,7 +31,7 @@ const PriceAlerts = () => {
   }, [alerts]);
 
   return (
-    <div className="price-alerts anti-design">
+    <div className="price-alerts anti-design top-cryptos-volume">
     <h3 className="anti-title">Set Price Alerts</h3>
     <div className="input-group">
       <input

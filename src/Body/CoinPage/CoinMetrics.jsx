@@ -43,7 +43,7 @@ const StyledTable = styled.table`
 
 const TableCell = styled.td`
   padding: 1rem;
-  font-size: 1.2rem;
+  font-size: 0.8rem;
   text-align: left;
   transition: background-color 0.3s ease;
 `;
@@ -98,26 +98,67 @@ const CoinMetrics = ({ quotes, currency, total_supply }) => {
     <TableContainer>
       <StyledTable>
         <tbody>
+        <TableRow>
+          <LabelCell>Currency Name</LabelCell>
+          {/* <ValueCell>{currency?.name || 'N/A'}</ValueCell> */}
+          <ValueCell>{quotes?.[currency.name]?.name || 'N/A'}</ValueCell>
+        </TableRow>
+
+
+        <TableRow>
+          <LabelCell>Current Price</LabelCell>
+          <ValueCell>{quotes?.[currency.name]?.price}</ValueCell>
+        </TableRow>
+
+        <TableRow>
+          <LabelCell>Price Change (7d)</LabelCell>
+          <ValueCell>{quotes?.[currency.name]?.percent_change_7d}%</ValueCell>
+        </TableRow>
+
+
           <TableRow>
             <LabelCell>Market Cap</LabelCell>
             <ValueCell>{quotes?.[currency.name]?.market_cap}</ValueCell>
           </TableRow>
+
+          <TableRow>
+            <LabelCell>Market Cap Change (24h)</LabelCell>
+            <ValueCell>{quotes?.[currency.name]?.market_cap_change_24h}%</ValueCell>
+          </TableRow>
+
+          {/* <TableRow>
+            <LabelCell>Fully Diluted Market Cap</LabelCell>
+            <ValueCell>{quotes?.[currency.name]?.fully_diluted_market_cap}</ValueCell>
+          </TableRow> */}
+
           <TableRow>
             <LabelCell>All Time High</LabelCell>
             <ValueCell>{quotes?.[currency.name]?.ath_price}</ValueCell>
           </TableRow>
+
+          <TableRow>
+            <LabelCell>All Time High Date</LabelCell>
+            <ValueCell>{quotes?.[currency.name]?.ath_date}</ValueCell>
+          </TableRow>
+
           <TableRow>
             <LabelCell>Volume (24h)</LabelCell>
             <ValueCell>{quotes?.[currency.name]?.volume_24h}</ValueCell>
           </TableRow>
+
           <TableRow>
             <LabelCell>Vol Change (24h)</LabelCell>
             <ValueCell>{quotes?.[currency.name]?.volume_24h_change_24h}</ValueCell>
           </TableRow>
+
           <TableRow>
             <LabelCell>Max Supply</LabelCell>
             <ValueCell>{total_supply}</ValueCell>
           </TableRow>
+          
+          
+
+
         </tbody>
       </StyledTable>
     </TableContainer>
