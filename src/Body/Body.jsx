@@ -43,9 +43,14 @@ function Body(props) {
       <HistoryLog />
       {/* <Converter /> */}
 
-      <PriceAlerts />
-      <NewsFeed />
-      <TrendingCoins />
+      <div className="components-container">
+        <PriceAlerts />
+        <TrendingCoins />
+      </div>
+
+
+      
+      
       {/* <MarketDominanceChart /> */}
       {/* <HistoricalChart /> */}
 
@@ -72,7 +77,8 @@ function Body(props) {
         
 
       </Routes>
-
+      
+      <NewsFeed />
       <PromoBanners />
       
       

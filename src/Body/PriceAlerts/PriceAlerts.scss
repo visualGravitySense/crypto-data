@@ -1,238 +1,233 @@
+.block {
+  background-color: #fff;
+  border: 3px solid #000;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 8px 8px 0px #000;
+  position: relative;
+  transition: box-shadow 0.3s ease;
+  font-size: 14px;
+  width: 100%;
 
-  
+  &:hover {
+    box-shadow: 8px 8px 0px #ff00ff; // Changes on hover for that retro neon feel
+  }
 
-  
-  .block {
-    background-color: #fff;
-    border: 3px solid #000;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 8px 8px 0px #000;
-    position: relative;
-    transition: box-shadow 0.3s ease;
-    font-size: 14px;
+  h3 {
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 10px;
+  }
+
+  h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  input {
+    border: 2px solid #000;
+    padding: 8px;
     width: 100%;
-    
-    &:hover {
-      box-shadow: 8px 8px 0px #ff00ff; // Changes on hover for that retro neon feel
-    }
-  
-    h3 {
-      font-size: 24px;
-      color: #000;
-      margin-bottom: 10px;
-    }
-  
-    h4 {
-      font-size: 18px;
-      color: #333;
-      margin-bottom: 10px;
-    }
-  
-    input {
-      border: 2px solid #000;
-      padding: 8px;
-      width: 100%;
-      margin-bottom: 10px;
-      font-family: 'Courier New', monospace;
-      background-color: #f8f8f8;
-    }
-  
-    button {
-      background-color: #fff;
-      border: 2px solid #000;
-      padding: 8px 16px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: background-color 0.2s, color 0.2s;
-      margin-bottom: 10px;
-      display: block;
-      width: 100%;
-  
-      &:hover {
-        background-color: #000;
-        color: #fff;
-      }
-    }
-  
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-  
-      li {
-        margin-bottom: 10px;
-        border-bottom: 1px dashed #000;
-        padding: 5px 0;
-  
-        a {
-          color: #000;
-          text-decoration: none;
-  
-          &:hover {
-            color: #ff00ff;
-          }
-        }
-      }
-    }
-  }
-  
-  // Specific styles for each block
-  .price-alerts {
-    border-color: #ff00ff;
-    background-color: #f0f0f0;
-  }
-  
-  .news-feed {
-    border-color: #00ff00;
+    margin-bottom: 10px;
+    //   font-family: 'Courier New', monospace;
     background-color: #f8f8f8;
   }
-  
-  .trending-coins {
-    border-color: #0000ff;
-    background-color: #f0f0f0;
-  }
-  
-  // Adding decorative elements like retro arrows
-  .arrow-right {
-    position: absolute;
-    top: 10px;
-    right: -20px;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-left: 20px solid #000;
-  }
-  
-  .arrow-right:hover {
-    border-left: 20px solid #ff00ff;
-  }
-  
 
-  .anti-design {
-    background-color: #f2f2f2;
-    padding: 30px;
-    border: 3px solid #000;
-    border-radius: 10px;
-    box-shadow: 10px 10px 0px #000;
-    position: relative;
-    font-family: 'Courier New', monospace;
-    max-width: 500px;
-    margin: auto;
-    text-align: center;
-  
-    h3 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #ff0040;
-      text-transform: uppercase;
-      background-color: #fff;
-      display: inline-block;
-      padding: 10px 20px;
-      border: 2px solid #000;
-      box-shadow: 5px 5px 0px #000;
-      position: relative;
-  
-      &:before {
-        content: '';
-        position: absolute;
-        top: -10px;
-        left: -10px;
-        width: 15px;
-        height: 15px;
-        background-color: #ff0040;
-        border-radius: 50%;
-      }
+  button {
+    background-color: #fff;
+    border: 2px solid #000;
+    padding: 8px 16px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+    margin-bottom: 10px;
+    display: block;
+    width: 100%;
+
+    &:hover {
+      background-color: #000;
+      color: #fff;
     }
-  
-    .input-group {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      margin-bottom: 20px;
-  
-      input {
-        padding: 10px;
-        border: 3px solid #000;
-        background-color: #fff;
-        font-size: 16px;
-        transition: background-color 0.3s ease;
-  
-        &:focus {
-          background-color: #ffcc00;
-          outline: none;
-        }
-      }
-    }
-  
-    .add-alert-button {
-      background-color: #fff;
-      border: 3px solid #000;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-      box-shadow: 5px 5px 0px #000;
-      transition: transform 0.3s ease;
-  
-      &:hover {
-        transform: translate(-5px, -5px);
-        background-color: #00ff7f;
-      }
-    }
-  
-    .active-alerts-title {
-      font-size: 22px;
-      margin-top: 30px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+
+    li {
       margin-bottom: 10px;
-      color: #00bfff;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-  
-    .alerts-list {
-      list-style-type: none;
-      padding: 0;
-  
-      .alert-item {
-        font-size: 18px;
-        padding: 10px;
-        background-color: #fff;
-        border: 3px solid #000;
-        margin-bottom: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        box-shadow: 5px 5px 0px #000;
-        transition: background-color 0.3s ease;
-  
+      border-bottom: 1px dashed #000;
+      padding: 5px 0;
+
+      a {
+        color: #000;
+        text-decoration: none;
+
         &:hover {
-          background-color: #ffcc00;
+          color: #ff00ff;
         }
       }
     }
-  
+  }
+}
+
+// Specific styles for each block
+.price-alerts {
+  border-color: #ff00ff;
+  background-color: #f0f0f0;
+}
+
+.news-feed {
+  border-color: #00ff00;
+  background-color: #f8f8f8;
+}
+
+.trending-coins {
+  border-color: #0000ff;
+  background-color: #f0f0f0;
+}
+
+// Adding decorative elements like retro arrows
+.arrow-right {
+  position: absolute;
+  top: 10px;
+  right: -20px;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 20px solid #000;
+}
+
+.arrow-right:hover {
+  border-left: 20px solid #ff00ff;
+}
+
+.anti-design {
+  background-color: #f2f2f2;
+  padding: 30px;
+  border: 3px solid #000;
+  border-radius: 10px;
+  box-shadow: 10px 10px 0px #000;
+  position: relative;
+  // font-family: 'Courier New', monospace;
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+
+  h3 {
+    font-family: "Courier New", monospace;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ff0040;
+    text-transform: uppercase;
+    background-color: #fff;
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #000;
+    box-shadow: 5px 5px 0px #000;
+    position: relative;
+
     &:before {
-      content: '';
+      content: "";
       position: absolute;
-      top: -15px;
-      right: -15px;
-      width: 30px;
-      height: 30px;
-      border: 3px solid #000;
+      top: -10px;
+      left: -10px;
+      width: 15px;
+      height: 15px;
       background-color: #ff0040;
       border-radius: 50%;
     }
-  
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: -15px;
-      left: -15px;
-      width: 30px;
-      height: 30px;
+  }
+
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+
+    input {
+      padding: 10px;
       border: 3px solid #000;
-      background-color: #00bfff;
-      border-radius: 50%;
+      background-color: #fff;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+
+      &:focus {
+        background-color: #ffcc00;
+        outline: none;
+      }
     }
   }
-  
+
+  .add-alert-button {
+    background-color: #fff;
+    border: 3px solid #000;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 5px 5px 0px #000;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translate(-5px, -5px);
+      background-color: #00ff7f;
+    }
+  }
+
+  .active-alerts-title {
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #00bfff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .alerts-list {
+    list-style-type: none;
+    padding: 0;
+
+    .alert-item {
+      font-size: 18px;
+      padding: 10px;
+      background-color: #fff;
+      border: 3px solid #000;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 5px 5px 0px #000;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #ffcc00;
+      }
+    }
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #000;
+    background-color: #ff0040;
+    border-radius: 50%;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: -15px;
+    width: 30px;
+    height: 30px;
+    border: 3px solid #000;
+    background-color: #00bfff;
+    border-radius: 50%;
+  }
+}

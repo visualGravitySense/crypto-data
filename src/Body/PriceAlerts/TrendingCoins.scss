@@ -1,0 +1,98 @@
+.anti-design {
+    background-color: #f2f2f2;
+    padding: 30px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    box-shadow: 10px 10px 0px #000;
+    position: relative;
+    // font-family: 'Courier New', monospace;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+  
+    h3 {
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #00bfff;
+      text-transform: uppercase;
+      background-color: #fff;
+      display: inline-block;
+      padding: 10px 20px;
+      border: 2px solid #000;
+      box-shadow: 5px 5px 0px #000;
+      position: relative;
+  
+      &:before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        width: 15px;
+        height: 15px;
+        background-color: #00bfff;
+        border-radius: 50%;
+      }
+    }
+  
+    .coins-list {
+      list-style-type: none;
+      padding: 0;
+  
+      .coin-item {
+        font-size: 18px;
+        font-weight: bold ;
+        padding: 15px;
+        margin-bottom: 10px;
+        background-color: #fff;
+        border: 3px solid #000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 5px 5px 0px #000;
+        transition: background-color 0.3s ease;
+  
+        &:hover {
+          background-color: #ffcc00;
+        }
+  
+        span:first-of-type {
+          font-weight: bold;
+          color: #ff0040;
+        }
+  
+        span:last-of-type {
+          color: #00b95d;
+          font-size: 20px;
+          font-weight: bold;
+
+          
+        }
+        
+      }
+    }
+  
+    &:before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      width: 30px;
+      height: 30px;
+      border: 3px solid #000;
+      background-color: #00bfff;
+      border-radius: 50%;
+    }
+  
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: -15px;
+      width: 30px;
+      height: 30px;
+      border: 3px solid #000;
+      background-color: #ff0040;
+      border-radius: 50%;
+    }
+  }
+  

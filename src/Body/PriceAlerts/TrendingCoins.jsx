@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './TrendingCoins.scss';
 
 const TrendingCoins = () => {
   const [trendingCoins, setTrendingCoins] = useState([]);
@@ -15,12 +16,13 @@ const TrendingCoins = () => {
   }, []);
 
   return (
-    <div className="trending-coins">
-      <h3>Trending Coins</h3>
-      <ul>
+    <div className="trending-coins anti-design">
+      <h3 className="anti-title">Trending Coins</h3>
+      <ul className="coins-list">
         {trendingCoins.map((coin) => (
-          <li key={coin.id}>
-            {coin.name} ({coin.symbol}): {coin.quotes.USD.percent_change_24h}% in the last 24 hours
+          <li className="coin-item" key={coin.id}>
+            <span>{coin.name} ({coin.symbol})</span>: 
+            <span>{coin.quotes.USD.percent_change_24h}%</span> in the last 24 hours
           </li>
         ))}
       </ul>
