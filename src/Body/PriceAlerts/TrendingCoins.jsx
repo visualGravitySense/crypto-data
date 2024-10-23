@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './TrendingCoins.scss';
+import '../CoinPage/CryptoTable.scss';
 
 const TrendingCoins = () => {
   const [trendingCoins, setTrendingCoins] = useState([]);
@@ -16,7 +17,7 @@ const TrendingCoins = () => {
   }, []);
 
   return (
-    <div className="trending-coins anti-design">
+    <div className="trending-coins anti-design top-cryptos-volume">
       <h3 className="anti-title">Trending Coins</h3>
       <ul className="coins-list">
         {trendingCoins.map((coin) => (

@@ -7,14 +7,14 @@ function TopByCap() {
   
     // Получение топ-3 криптовалют по рыночной капитализации
     React.useEffect(() => {
-      fetch('https://api.coinpaprika.com/v1/tickers?limit=3')
+      fetch('https://api.coinpaprika.com/v1/tickers?limit=5')
         .then((response) => response.json())
         .then((data) => {
           // Сортировка по рыночной капитализации и выбор топ-3
           const sortedData = data.sort(
             (a, b) => b.quotes.USD.market_cap - a.quotes.USD.market_cap
           );
-          setTopCoins(sortedData.slice(0, 3));
+          setTopCoins(sortedData.slice(0, 5));
         })
         .catch((error) => console.error('Error fetching data:', error));
     }, []);

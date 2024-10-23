@@ -138,7 +138,7 @@ function CoinPage() {
           <br></br>
         </Col>
         <Col md={8}>
-        <br></br>
+        {/* <br></br> */}
           {/* <CoinPriceSection /> */}
           {/* <ChartModal /> */}
           <ChartPeriods

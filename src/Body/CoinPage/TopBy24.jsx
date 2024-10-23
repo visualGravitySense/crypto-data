@@ -14,7 +14,7 @@ function TopBy24() {
           const sortedData = data.sort(
             (a, b) => b.quotes.USD.volume_24h - a.quotes.USD.volume_24h
           );
-          setTopVolumeCoins(sortedData.slice(0, 3));
+          setTopVolumeCoins(sortedData.slice(0, 5));
         })
         .catch((error) => console.error('Error fetching data:', error));
     }, []);
