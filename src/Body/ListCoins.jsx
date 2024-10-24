@@ -13,7 +13,7 @@ import Col from "react-bootstrap/Col";
 import AboutSection from "./AboutSection";
 import Converter from "./CoinPage/Converter";
 
-
+import './AboutSection.scss';
 
 
 
