@@ -45,7 +45,7 @@ function Body(props) {
       {/* <Converter /> */}
 
       {/* <MarketDominanceChart /> */}
-      {/* <HistoricalChart /> */}
+      <HistoricalChart />
 
       {/* <div className="components-container">
         
