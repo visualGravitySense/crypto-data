@@ -1,8 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Pie } from 'react-chartjs-2';
+import {
+  Chart as ChartJS,
+  ArcElement,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const MarketDominanceChart = () => {
   const [dominanceData, setDominanceData] = useState({});
+
+  
 
   useEffect(() => {
     fetch('https://api.coinpaprika.com/v1/global')
@@ -12,7 +22,11 @@ const MarketDominanceChart = () => {
           labels: ['Bitcoin', 'Ethereum', 'Others'],
           datasets: [{
             label: 'Market Dominance',
-            data: [data.bitcoin_dominance_percentage, data.ethereum_dominance_percentage, 100 - (data.bitcoin_dominance_percentage + data.ethereum_dominance_percentage)],
+            data: [
+              data.bitcoin_dominance_percentage,
+              data.ethereum_dominance_percentage,
+              100 - (data.bitcoin_dominance_percentage + data.ethereum_dominance_percentage)
+            ],
             backgroundColor: ['#FFCE56', '#36A2EB', '#FF6384']
           }]
         });
