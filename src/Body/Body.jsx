@@ -37,12 +37,19 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import "./Body.scss";
 
+
+
+
+
 function Body(props) {
   return (
     <BodyProvider>
       <GlobalData />
       <HistoryLog />
+
       {/* <Converter /> */}
+
+      
 
       {/* <MarketDominanceChart /> */}
       <HistoricalChart />
