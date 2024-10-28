@@ -23,7 +23,9 @@ import TopPlayers from "./TopPlayers";
 import TopByCap from "./TopByCap";
 import TopBy24 from "./TopBy24";
 
-
+import MarketCapChart from './MarketCapChart';
+import UseMarketCapData from './UseMarketCapData';
+ 
 // Стилизованная кнопка
 const StyledButton = styled.button`
   width: 50%;
@@ -68,12 +70,14 @@ const StyledButton = styled.button`
 `;
 
 function CoinPage() {
+  
   const dispatch = useDispatch();
   const [childModalShow, setChildModalShow] = React.useState(false);
   const [historicalData, setHistoricalData] = React.useState([]);
   const [selectedPeriod, setSelectedPeriod] = React.useState(periods[0]);
 
   const { coinId } = useParams();
+  const marketCapData = UseMarketCapData(coinId);
 
   const selectedCurrency = useSelector((state) => state.selectedCurrency);
 
@@ -129,6 +133,14 @@ function CoinPage() {
         
         <StyledButton className="w-100" onClick={handleOnClick}>Add to compare</StyledButton>
         <br></br>
+        <div>
+            <h2>Market Cap History (Last 7 Days)</h2>
+            {marketCapData.length > 0 ? (
+                <MarketCapChart marketCapData={marketCapData} />
+            ) : (
+                <p>Loading market cap data...</p>
+            )}
+        </div>
           <CoinMetrics {...coinData} currency={selectedCurrency} />
 
           <br></br>
