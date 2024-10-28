@@ -25,7 +25,7 @@ import TopBy24 from "./TopBy24";
 
 import MarketCapChart from './MarketCapChart';
 import UseMarketCapData from './UseMarketCapData';
-
+ 
 // Стилизованная кнопка
 const StyledButton = styled.button`
   width: 50%;
