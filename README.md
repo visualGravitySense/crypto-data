@@ -4,7 +4,7 @@
 
 The **Cryptocurrency Dashboard** is a front-end web application built using **React**, **Vite**, and **Bootstrap**. It fetches real-time cryptocurrency data from the **CoinPaprika API**, allowing users to explore up-to-date cryptocurrency information like prices, symbols, rankings, and more.
 
-[demo page link](https://visualgravitysense.github.io/crypto-data/)
+
 
 [GitHub Repository](https://github.com/visualGravitySense/crypto-data)
 
